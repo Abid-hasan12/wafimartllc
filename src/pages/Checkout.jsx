@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
-import { ShieldCheck, CreditCard, Phone, Bank, Loader2 } from 'lucide-react';
+import { ShieldCheck, CreditCard, Phone, Landmark, Loader2, Wallet, Truck } from 'lucide-react';
 
 function Checkout() {
   const navigate = useNavigate();
@@ -98,7 +98,7 @@ function Checkout() {
     if (selectedPaymentCategory === 'mobile') return selectedMobileWallet;
     if (selectedPaymentCategory === 'card') {
       const last4 = cardData.number.slice(-4);
-      return `${cardBrand || 'Card'} ending ${last4 || '••••'}`;
+      return `${cardBrand || 'Card'} ending ${last4 || 'ï¿½ï¿½ï¿½ï¿½'}`;
     }
     if (selectedPaymentCategory === 'netbanking') return selectedNetBank;
     return 'Unknown';
@@ -299,7 +299,7 @@ function Checkout() {
               {[
                 { id: 'mobile', label: 'Mobile Banking', description: 'bKash, Nagad, Rocket', icon: Phone },
                 { id: 'card', label: 'Credit/Debit Card', description: 'Visa or Mastercard', icon: CreditCard },
-                { id: 'netbanking', label: 'Net Banking', description: 'Popular banks', icon: Bank },
+                { id: 'netbanking', label: 'Net Banking', description: 'Popular banks', icon: Landmark },
               ].map((option) => (
                 <button
                   key={option.id}

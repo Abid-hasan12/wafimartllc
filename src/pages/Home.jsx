@@ -97,13 +97,13 @@ function Home() {
 
                     <div
                         ref={(el) => (scrollContainers.current[category.slug] = el)}
-                        className="flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth py-2 pl-14 pr-14"
+                        className="flex gap-4 overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth py-2 pl-14 pr-14"
                         style={{ WebkitOverflowScrolling: 'touch', touchAction: 'pan-x' }}
                     >
                         {categoryProducts.map((product) => (
                             <div
                                 key={product.id}
-                                className="flex-shrink-0 min-w-[min(100%,22rem)] sm:min-w-[calc(50%-1.5rem)] md:min-w-[calc(33.333%-1.5rem)] lg:min-w-[calc(25%-1.5rem)]"
+                                className="flex-shrink-0 min-w-[min(100%,16rem)] sm:min-w-[calc(50%-1rem)] md:min-w-[calc(33.333%-1rem)] lg:min-w-[calc(25%-1rem)]"
                             >
                                 <ProductCard product={product} />
                             </div>
@@ -141,7 +141,7 @@ function Home() {
                         Explore our top-selling departments with expertly curated selections and exclusive deals.
                     </p>
                 </div>
-                <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+                <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                     {[
                         {
                             name: 'Electronics',

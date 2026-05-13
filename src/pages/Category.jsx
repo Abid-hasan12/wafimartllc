@@ -20,7 +20,7 @@ function Category() {
   );
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8"> 
       <div className="rounded-[2rem] bg-white p-8 shadow-soft sm:p-10">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -33,7 +33,7 @@ function Category() {
         </div>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {filteredProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
