@@ -101,6 +101,16 @@ function Header() {
                                     </button>
                                     <button
                                         type="button"
+                                        className="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 font-semibold border-b border-gray-200"
+                                        onClick={() => {
+                                            navigate('/my-orders');
+                                            setUserDropdownOpen(false);
+                                        }}
+                                    >
+                                        📦 My Orders
+                                    </button>
+                                    <button
+                                        type="button"
                                         className="w-full text-left px-4 py-3 text-sm text-red-600 hover:bg-red-50 font-semibold"
                                         onClick={() => {
                                             logout();
@@ -198,6 +208,17 @@ function Header() {
                             >
                                 <span>👤 Profile ({user.username})</span>
                                 <User className="h-4 w-4 text-white" />
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    navigate('/my-orders');
+                                    setMobileOpen(false);
+                                }}
+                                className="flex w-full items-center justify-between rounded-3xl border border-blue-700 bg-blue-800 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+                            >
+                                <span>📦 My Orders</span>
+                                <ShoppingCart className="h-4 w-4 text-white" />
                             </button>
                             <button
                                 onClick={() => {

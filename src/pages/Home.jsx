@@ -1,12 +1,12 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 import ProductCard from '../components/ProductCard';
 import HeroSlider from '../components/HeroSlider';
 
 function Home() {
     const { products } = useAppContext();
-    const [hoveredCategory, setHoveredCategory] = useState(null);
     const scrollContainers = useRef({});
 
     const heroSlides = [
@@ -45,24 +45,17 @@ function Home() {
         const container = scrollContainers.current[categorySlug];
         if (!container) return;
 
-        const scrollAmount = 300;
-        const newPosition = (scrollPositions[categorySlug] || 0) + (direction === 'left' ? -scrollAmount : scrollAmount);
-        
-        container.scrollTo({
-            left: newPosition,
+        const scrollAmount = container.clientWidth * 0.8;
+
+        container.scrollBy({
+            left: direction === 'left' ? -scrollAmount : scrollAmount,
             behavior: 'smooth',
         });
-        
-        setScrollPositions(prev => ({
-            ...prev,
-            [categorySlug]: newPosition
-        }));
     };
 
     const CategorySection = ({ category }) => {
         const categoryProducts = getProductsByCategory(category.slug);
-        const isHovered = hoveredCategory === category.slug;
-        
+
         return (
             <section key={category.slug} className="space-y-6 py-8">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -78,39 +71,49 @@ function Home() {
                     </Link>
                 </div>
 
-                {/* Auto-Scrolling Horizontal Slider */}
-                <div 
-                    className="relative"
-                    onMouseEnter={() => setHoveredCategory(category.slug)}
-                    onMouseLeave={() => setHoveredCategory(null)}
-                    onTouchStart={() => setHoveredCategory(category.slug)}
-                    onTouchEnd={() => setHoveredCategory(null)}
-                >
+                {/* Manual horizontal slider with arrows */}
+                <div className="relative">
+                    <div className="absolute inset-y-0 left-0 z-20 flex items-center pl-2">
+                        <button
+                            type="button"
+                            onClick={() => handleScroll('left', category.slug)}
+                            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-soft transition hover:bg-white"
+                            aria-label={`Scroll ${category.name} left`}
+                        >
+                            <ChevronLeft className="h-5 w-5" />
+                        </button>
+                    </div>
+
+                    <div className="absolute inset-y-0 right-0 z-20 flex items-center pr-2">
+                        <button
+                            type="button"
+                            onClick={() => handleScroll('right', category.slug)}
+                            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-soft transition hover:bg-white"
+                            aria-label={`Scroll ${category.name} right`}
+                        >
+                            <ChevronRight className="h-5 w-5" />
+                        </button>
+                    </div>
+
                     <div
                         ref={(el) => (scrollContainers.current[category.slug] = el)}
-                        className={`flex gap-6 overflow-hidden scrollbar-hide ${isHovered ? 'paused-scroll' : ''}`}
+                        className="flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth py-2 pl-14 pr-14"
+                        style={{ WebkitOverflowScrolling: 'touch', touchAction: 'pan-x' }}
                     >
-                        {/* Duplicate products for seamless loop */}
-                        {[...categoryProducts, ...categoryProducts].map((product, idx) => (
-                            <div 
-                                key={`${product.id}-${idx}`} 
-                                className="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
-                                onMouseEnter={() => setHoveredCategory(category.slug)}
-                                onMouseLeave={() => setHoveredCategory(null)}
-                                onTouchStart={() => setHoveredCategory(category.slug)}
-                                onTouchEnd={() => setHoveredCategory(null)}
+                        {categoryProducts.map((product) => (
+                            <div
+                                key={product.id}
+                                className="flex-shrink-0 min-w-[min(100%,22rem)] sm:min-w-[calc(50%-1.5rem)] md:min-w-[calc(33.333%-1.5rem)] lg:min-w-[calc(25%-1.5rem)]"
                             >
                                 <ProductCard product={product} />
                             </div>
                         ))}
                     </div>
 
-                    {/* Gradient overlay at edges for polish */}
-                    <div className="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-slate-50 to-transparent pointer-events-none z-10" />
-                    <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-slate-50 to-transparent pointer-events-none z-10" />
+                    <div className="pointer-events-none absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-slate-50 to-transparent z-10" />
+                    <div className="pointer-events-none absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-slate-50 to-transparent z-10" />
                 </div>
 
-                {/* View All Button */}
                 <div className="text-center pt-6">
                     <Link
                         to={`/category/${category.slug}`}

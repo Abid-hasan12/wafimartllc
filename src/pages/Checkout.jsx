@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import { CheckCircle2 } from 'lucide-react';
 
 function Checkout() {
   const navigate = useNavigate();
   const { cart, subtotal, tax, total, clearCart } = useCart();
+  const { user } = useAuth();
   const [orderPlaced, setOrderPlaced] = useState(false);
+  const [newOrderId, setNewOrderId] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -79,6 +82,23 @@ function Checkout() {
     }
   };
 
+  const getSavedOrders = () => {
+    const savedOrders = localStorage.getItem('wafi_orders');
+    return savedOrders ? JSON.parse(savedOrders) : [];
+  };
+
+  const saveOrder = (order) => {
+    const existingOrders = getSavedOrders();
+    const updatedOrders = [order, ...existingOrders];
+    localStorage.setItem('wafi_orders', JSON.stringify(updatedOrders));
+  };
+
+  const createOrderId = () => {
+    const existingOrders = getSavedOrders();
+    const nextNumber = existingOrders.length + 1025;
+    return `WAFI-${nextNumber}`;
+  };
+
   const handlePlaceOrder = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -88,21 +108,23 @@ function Checkout() {
       return;
     }
 
-    // Simulate order submission
+    const orderId = createOrderId();
     const orderData = {
+      id: orderId,
+      orderId,
+      customerUsername: user?.username || 'Guest User',
       customerData: formData,
       cartItems: cart,
       paymentMethod,
       orderTotal: total,
       orderDate: new Date().toISOString(),
+      status: 'Pending',
     };
 
-    console.log('Order submitted:', orderData);
-
-    // Clear cart after successful order
+    saveOrder(orderData);
+    setNewOrderId(orderId);
     clearCart();
 
-    // Simulate processing delay
     setTimeout(() => {
       setOrderPlaced(true);
       setIsSubmitting(false);
@@ -119,17 +141,18 @@ function Checkout() {
           Order confirmation has been sent to your email. You will receive your items within 2-4 business days.
         </p>
 
-        <div className="mt-8 space-y-2 rounded-3xl border border-emerald-200 bg-white p-6">
+            <div className="space-y-4 rounded-3xl border border-emerald-200 bg-white p-6">
+          <p className="text-sm text-slate-600">Order ID: <span className="font-semibold text-slate-900">#{newOrderId}</span></p>
           <p className="text-sm text-slate-600">Payment Method: <span className="font-semibold text-slate-900">Cash on Delivery</span></p>
           <p className="text-sm text-slate-600">Order Total: <span className="font-bold text-2xl text-emerald-600">${total.toFixed(2)}</span></p>
         </div>
 
         <div className="mt-8 space-y-3">
           <button
-            onClick={() => navigate('/')}
-            className="w-full rounded-full bg-emerald-600 px-8 py-4 text-sm font-semibold text-white transition hover:bg-emerald-700"
+            onClick={() => navigate('/my-orders')}
+            className="w-full rounded-full bg-indigo-600 px-8 py-4 text-sm font-semibold text-white transition hover:bg-indigo-700"
           >
-            Continue shopping
+            View my orders
           </button>
           <button
             onClick={() => navigate('/')}

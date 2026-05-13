@@ -1,6 +1,8 @@
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Profile from './pages/Profile';
+import MyOrders from './pages/MyOrders';
+import OrderDetails from './pages/OrderDetails';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -21,6 +23,8 @@ function App() {
                     <Route path="/product/:id" element={<ProductDetails />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/checkout" element={<Checkout />} />
+                    <Route path="/my-orders" element={<MyOrders />} />
+                    <Route path="/my-orders/:orderId" element={<OrderDetails />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/profile" element={<Profile />} />

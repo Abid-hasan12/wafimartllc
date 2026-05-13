@@ -28,46 +28,8 @@ a {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
-  animation: autoScroll 65s linear infinite;
-  animation-play-state: running;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
-}
-
-/* Pause animation on hover */
-.scrollbar-hide.paused-scroll {
-  animation-play-state: paused;
-}
-
-/* Auto-scroll animation - seamless loop */
-@keyframes autoScroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* Mobile speed - slower for comfort (75s) */
-@media (max-width: 640px) {
-  .scrollbar-hide {
-    animation-duration: 75s;
-  }
-}
-
-/* Tablet speed - medium (70s) */
-@media (min-width: 641px) and (max-width: 1024px) {
-  .scrollbar-hide {
-    animation-duration: 70s;
-  }
-}
-
-/* Desktop speed - optimal (65s) */
-@media (min-width: 1025px) {
-  .scrollbar-hide {
-    animation-duration: 65s;
-  }
 }
