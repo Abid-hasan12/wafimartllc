@@ -23,7 +23,7 @@ export const productsData = [
     category: "Electronics",
     categorySlug: "electronics",
     price: 129.99,
-    originalPrice: 199.99,
+    originalPrice: 199.89,
     rating: 4.8,
     reviews: 1523,
     sold: 5680,
