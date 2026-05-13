@@ -4,8 +4,8 @@ import { useAuth } from '../context/AuthContext';
 import { ShoppingBag, CheckCircle2, Package, Truck, MapPin, ArrowLeft } from 'lucide-react';
 
 const orderSteps = [
-  { label: 'Ordered', icon: ShoppingBag },
-  { label: 'Confirmed', icon: CheckCircle2 },
+  { label: 'Order Placed', icon: ShoppingBag },
+  { label: 'Payment Confirmed', icon: CheckCircle2 },
   { label: 'Shipped', icon: Package },
   { label: 'Out for Delivery', icon: Truck },
   { label: 'Delivered', icon: MapPin },
@@ -36,6 +36,23 @@ const getProgressStep = (orderDate) => {
   return 5;
 };
 
+const getStatusBadgeColor = (status) => {
+  const colors = {
+    Pending: 'bg-yellow-100 text-yellow-800',
+    Processing: 'bg-blue-100 text-blue-800',
+    Shipped: 'bg-blue-100 text-blue-800',
+    Delivered: 'bg-emerald-100 text-emerald-800',
+  };
+  return colors[status] || 'bg-slate-100 text-slate-800';
+};
+
+const getDetailStatus = (orderDate) => {
+  const step = getProgressStep(orderDate);
+  if (step === 1) return 'Pending';
+  if (step < 5) return 'Shipped';
+  return 'Delivered';
+};
+
 const formatDate = (orderDate) =>
   new Intl.DateTimeFormat('en-US', {
     weekday: 'short',
@@ -45,16 +62,6 @@ const formatDate = (orderDate) =>
     hour: 'numeric',
     minute: '2-digit',
   }).format(new Date(orderDate));
-
-const getStatusBadge = (status) => {
-  const styles = {
-    Pending: 'bg-yellow-100 text-yellow-800',
-    Processing: 'bg-sky-100 text-sky-800',
-    Shipped: 'bg-indigo-100 text-indigo-800',
-    Delivered: 'bg-emerald-100 text-emerald-800',
-  };
-  return styles[status] || 'bg-slate-100 text-slate-800';
-};
 
 function OrderDetails() {
   const { orderId } = useParams();
@@ -89,7 +96,7 @@ function OrderDetails() {
     );
   }
 
-  const status = getOrderStatus(order.orderDate);
+  const status = getDetailStatus(order.orderDate);
   const activeStep = getProgressStep(order.orderDate);
 
   return (
@@ -108,7 +115,7 @@ function OrderDetails() {
           <div>
             <h1 className="text-3xl font-semibold text-slate-900">Order #{order.orderId}</h1>
             <div className="mt-3 flex flex-wrap items-center gap-3">
-              <span className={`inline-flex rounded-full px-3 py-1 text-sm font-semibold ${getStatusBadge(status)}`}>
+              <span className={`inline-flex rounded-full px-3 py-1 text-sm font-semibold ${getStatusBadgeColor(status)}`}>
                 {status}
               </span>
               <span className="text-sm text-slate-500">Placed on {formatDate(order.orderDate)}</span>
@@ -124,35 +131,38 @@ function OrderDetails() {
 
       <section className="rounded-[2rem] bg-white p-8 shadow-soft">
         <h2 className="text-xl font-semibold text-slate-900">Order tracking</h2>
-        <div className="mt-8 space-y-6">
-          <div className="flex items-center gap-4 overflow-x-auto pb-4">
+        <div className="relative mt-8">
+          <div className="absolute left-14 right-14 top-8 h-1 rounded-full bg-slate-200" />
+          <div
+            className="absolute left-14 top-8 h-1 rounded-full bg-indigo-600"
+            style={{ width: `${((activeStep - 1) / (orderSteps.length - 1)) * 100}%` }}
+          />
+          <div className="grid grid-cols-5 gap-4">
             {orderSteps.map((step, index) => {
               const StepIcon = step.icon;
-              const isCompleted = index + 1 <= activeStep;
+              const stepNumber = index + 1;
+              const isCompleted = stepNumber <= activeStep;
               return (
-                <div key={step.label} className="relative flex min-w-[12rem] flex-col items-center gap-3 text-center">
+                <div key={step.label} className="relative flex flex-col items-center text-center">
                   <div
-                    className={`flex h-14 w-14 items-center justify-center rounded-full border-2 ${
+                    className={`mb-4 flex h-14 w-14 items-center justify-center rounded-full border-2 ${
                       isCompleted ? 'border-indigo-600 bg-indigo-600 text-white' : 'border-slate-200 bg-white text-slate-500'
                     }`}
                   >
                     <StepIcon className="h-6 w-6" />
                   </div>
-                  <span className={`text-sm font-semibold ${isCompleted ? 'text-slate-900' : 'text-slate-500'}`}>
+                  <p className={`text-xs font-semibold ${isCompleted ? 'text-slate-900' : 'text-slate-500'}`}>
                     {step.label}
-                  </span>
-                  {index < orderSteps.length - 1 && (
-                    <span className={`absolute right-0 top-1/2 h-1 w-[calc(100%+4rem)] -translate-y-1/2 ${isCompleted ? 'bg-indigo-600' : 'bg-slate-200'}`} />
-                  )}
+                  </p>
                 </div>
               );
             })}
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+          <div className="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-6">
             <p className="text-sm font-semibold text-slate-900">Order progress</p>
             <p className="mt-3 text-sm text-slate-600">
-              Orders typically move from pending to processing, then shipped, out for delivery, and finally delivered.
+              Track every stage from placement through delivery with the current order timeline.
             </p>
           </div>
         </div>

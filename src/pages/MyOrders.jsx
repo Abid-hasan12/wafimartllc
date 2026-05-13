@@ -20,8 +20,8 @@ const getOrderStatus = (orderDate) => {
 
 const badgeStyles = {
   Pending: 'bg-yellow-100 text-yellow-800',
-  Processing: 'bg-sky-100 text-sky-800',
-  Shipped: 'bg-indigo-100 text-indigo-800',
+  Processing: 'bg-blue-100 text-blue-800',
+  Shipped: 'bg-blue-100 text-blue-800',
   Delivered: 'bg-emerald-100 text-emerald-800',
 };
 
@@ -47,16 +47,21 @@ function MyOrders() {
 
       {sortedOrders.length === 0 ? (
         <div className="rounded-[2rem] border border-slate-200 bg-white p-12 text-center shadow-soft">
+          <div className="mx-auto mb-8 flex h-64 w-full max-w-2xl items-center justify-center">
+            <svg viewBox="0 0 640 512" className="h-full w-full text-slate-300" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M608 128H416l-32-96H256l-32 96H32C14.33 128 0 142.3 0 160v240c0 17.7 14.33 32 32 32h16v64c0 17.7 14.33 32 32 32h416c17.7 0 32-14.3 32-32v-64h16c17.7 0 32-14.3 32-32V160C640 142.3 625.7 128 608 128zM256 64h128l16 48H240L256 64zM96 176h96v96H96V176zM224 176h192v96H224V176zM448 176h96v96h-96V176zM48 408V304h64v104H48zM528 408V304h64v104H528z" />
+            </svg>
+          </div>
           <Package className="mx-auto h-14 w-14 text-slate-400" />
           <h2 className="mt-6 text-2xl font-semibold text-slate-900">No orders yet</h2>
           <p className="mt-3 text-slate-600">
-            Your orders will appear here as soon as you place your first order.
+            Start shopping to build your first order and track its progress here.
           </p>
           <Link
             to="/"
             className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-indigo-600 px-8 py-4 text-sm font-semibold text-white transition hover:bg-indigo-700"
           >
-            Shop Now
+            Start Shopping
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
