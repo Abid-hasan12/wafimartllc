@@ -4,6 +4,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 import ProductCard from '../components/ProductCard';
 import HeroSlider from '../components/HeroSlider';
+import TrendingNow from '../components/TrendingNow';
+import '../components/TrendingNow.css';
 
 function Home() {
     const { products } = useAppContext();
@@ -185,6 +187,9 @@ function Home() {
                     ))}
                 </div>
             </section>
+
+            {/* Trending Now Section */}
+            <TrendingNow />
 
             {/* Category Slider Sections */}
             {categories.map(category => (

@@ -1,0 +1,136 @@
+/* Trending Now Section - Clean & Compact Version */
+.trending-now-section {
+    background: #f8fafc;
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+    padding: 1.5rem 0.5rem;
+    margin: 2rem 0;
+}
+
+.trending-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+.trending-header h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.trending-icon {
+    font-size: 1.6rem;
+}
+
+.trending-slider {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: column;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem;
+    scroll-snap-type: x mandatory;
+}
+
+/* স্লাইডারের স্ক্রলবার হাইড করার জন্য */
+.trending-slider {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.trending-slider::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
+
+/* Scrollbar Hide */
+.trending-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.trending-slider {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.trending-card {
+    min-width: 140px;
+    max-width: 150px;
+    height: 130px;
+    /* ফিক্সড হাইট যাতে সব কার্ড সমান থাকে */
+    background: #fff;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    padding: 0.75rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    scroll-snap-align: start;
+}
+
+.trending-img-wrap {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+}
+
+.trending-img-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.trending-badge {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: #fbbf24;
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.trending-info {
+    width: 100%;
+    text-align: center;
+}
+
+.trending-name {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #334155;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* ২ লাইন পর্যন্ত নাম দেখাবে */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    .trending-card {
+        min-width: 130px;
+        height: 120px;
+    }
+
+    .trending-img-wrap {
+        width: 55px;
+        height: 55px;
+    }
+}
