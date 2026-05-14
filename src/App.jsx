@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import MaintenanceModal from './components/MaintenanceModal';
+import ScrollToTop from './components/ScrollToTop';
 
 // Pages
 import Home from './pages/Home';
@@ -23,6 +24,9 @@ function App() {
             <MaintenanceModal />
 
             <Header />
+
+            {/* Scroll to top on route change */}
+            <ScrollToTop />
 
             <main className="mx-auto max-w-7xl px-4 pb-16 pt-6 sm:px-6 lg:px-8">
                 <Routes>
