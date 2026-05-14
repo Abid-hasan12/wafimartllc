@@ -24,10 +24,10 @@ function Header() {
 
     return (
         <header className="sticky top-0 z-50 border-b border-blue-800 bg-blue-700 shadow-sm">
-            <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-                <div className="flex items-center gap-3">
-                    <Link to="/">
-                        <img src={logo} alt="WafiMartLLC Logo" className="h-12 w-full object-contain" />
+            <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8" style={{height: '64px'}}>
+                <div className="flex items-center gap-3 h-full">
+                    <Link to="/" className="h-full flex items-center">
+                        <img src={logo} alt="WafiMartLLC Logo" className="h-full object-contain"/>
                     </Link>
 
                     <div className="relative hidden md:block">
