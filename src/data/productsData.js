@@ -666,7 +666,7 @@ export const productsData = [
     sold: 4230,
     badge: "bestseller",
     description: "Lightweight running shoes engineered for comfort, stability, and all-day wear.",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/runningshoe.jfif",
     details: ["Breathable mesh upper", "Responsive cushioning", "Durable rubber outsole", "Flexible performance fit"]
   },
   {
@@ -680,7 +680,7 @@ export const productsData = [
     reviews: 1240,
     sold: 8920,
     description: "Soft 100% cotton t-shirt available in multiple colors.",
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/tshirt.jfif",
     details: ["100% organic cotton", "Pre-shrunk", "Comfortable fit", "Multiple colors"]
   },
   {
@@ -695,7 +695,7 @@ export const productsData = [
     sold: 3420,
     badge: "top-rated",
     description: "Premium denim jeans with perfect fit and timeless style.",
-    image: "https://images.unsplash.com/photo-1542272604-787c62d465d1?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/jeans.jfif",
     details: ["100% cotton denim", "5-pocket design", "Classic blue", "Comfortable waist"]
   },
   {
@@ -709,7 +709,7 @@ export const productsData = [
     reviews: 567,
     sold: 1890,
     description: "Warm water-resistant parka jacket for winter weather.",
-    image: "https://images.unsplash.com/photo-1551028719-00167b16ebc5?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/jacket.jfif",
     details: ["Water-resistant", "Insulated lining", "Multiple pockets", "Adjustable hood"]
   },
   {
@@ -723,7 +723,7 @@ export const productsData = [
     reviews: 445,
     sold: 2340,
     description: "Light and breathable sundress perfect for summer days.",
-    image: "https://images.unsplash.com/photo-1595777712802-a1e9e8e1d4a3?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/sundress.jfif",
     details: ["Breathable fabric", "Adjustable straps", "Flowy design", "Multiple prints"]
   },
   {
@@ -737,7 +737,7 @@ export const productsData = [
     reviews: 612,
     sold: 3210,
     description: "Lightweight mesh athletic shorts for gym and outdoor activities.",
-    image: "https://images.unsplash.com/photo-1586521221566-e1de752948da?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/short.jfif",
     details: ["Mesh material", "Moisture-wicking", "Pockets", "Quick-dry"]
   },
   {
@@ -766,7 +766,7 @@ export const productsData = [
     sold: 2890,
     badge: "bestseller",
     description: "High-waisted yoga leggings with pockets and moisture control.",
-    image: "https://images.unsplash.com/photo-1506629082632-11c1b3d0cf0d?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/highwist.jfif",
     details: ["High-waist design", "Side pockets", "Moisture-wicking", "4-way stretch"]
   },
   {
@@ -780,7 +780,7 @@ export const productsData = [
     reviews: 456,
     sold: 1230,
     description: "Slim-fit blazer perfect for professional and casual wear.",
-    image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/blazer.jfif",
     details: ["Slim fit", "Two-button design", "Lined", "Pressed crease"]
   },
   {
@@ -794,7 +794,7 @@ export const productsData = [
     reviews: 678,
     sold: 4560,
     description: "Durable canvas backpack with padded laptop compartment.",
-    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/bag.jfif",
     details: ["Canvas material", "Laptop compartment", "USB charging port", "Water-resistant"]
   },
   {
@@ -808,7 +808,7 @@ export const productsData = [
     reviews: 523,
     sold: 3210,
     description: "RFID blocking leather wallet with multiple card slots.",
-    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/wallet.jfif",
     details: ["RFID blocking", "Genuine leather", "8 card slots", "Slim design"]
   },
   {
@@ -823,7 +823,7 @@ export const productsData = [
     sold: 5670,
     badge: "top-rated",
     description: "Classic white casual sneakers that go with everything.",
-    image: "https://images.unsplash.com/photo-1549298916-b52d612da012?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/sneaker.jfif",
     details: ["Premium white leather", "Comfortable sole", "Versatile style", "Easy to clean"]
   },
   {
@@ -837,7 +837,7 @@ export const productsData = [
     reviews: 445,
     sold: 2890,
     description: "Warm beanie hat in multiple colors for winter season.",
-    image: "https://images.unsplash.com/photo-1515562141207-5dca89f118dd?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/winterhat.jfif",
     details: ["Acrylic blend", "Stretchy fit", "Multiple colors", "Warm and cozy"]
   },
   {
@@ -851,7 +851,7 @@ export const productsData = [
     reviews: 612,
     sold: 2120,
     description: "Stylish sunglasses with 100% UV protection.",
-    image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/sunglass.jfif",
     details: ["100% UV protection", "Polarized lenses", "Metal frame", "Case included"]
   },
   {
@@ -865,7 +865,7 @@ export const productsData = [
     reviews: 378,
     sold: 1450,
     description: "Premium silk scarf with elegant patterns.",
-    image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/scraf.jfif",
     details: ["100% silk", "Hand-finished", "Multiple patterns", "Travel friendly"]
   }
 ];
