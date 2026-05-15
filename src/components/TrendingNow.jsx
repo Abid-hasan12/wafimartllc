@@ -4,13 +4,9 @@ import './TrendingNow.css';
 
 // Helper: Get trending products (best sellers or highest ratings)
 const getTrendingProducts = () => {
-    // Flatten all categories
-    const allProducts = Object.values(productsData).flat();
-    // Filter best sellers or top ratings
-    const trending = allProducts
-        .filter(
-            (p) => p.isBestSeller || p.rating >= 4.7
-        )
+    // productsData is already an array
+    const trending = productsData
+        .filter((p) => p.badge === 'bestseller' || p.rating >= 4.7)
         .sort((a, b) => (b.rating || 0) - (a.rating || 0))
         .slice(0, 12);
     return trending;

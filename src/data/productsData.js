@@ -666,7 +666,7 @@ export const productsData = [
     sold: 4230,
     badge: "bestseller",
     description: "Lightweight running shoes engineered for comfort, stability, and all-day wear.",
-    image: "/asset/products/fashion/runningshoe.jfif",
+    image: "asset/products/fashion/runningshoe.jfif",
     details: ["Breathable mesh upper", "Responsive cushioning", "Durable rubber outsole", "Flexible performance fit"]
   },
   {
@@ -680,7 +680,7 @@ export const productsData = [
     reviews: 1240,
     sold: 8920,
     description: "Soft 100% cotton t-shirt available in multiple colors.",
-    image: "/asset/products/fashion/tshirt.jfif",
+    image: "asset/products/fashion/tshirt.jfif",
     details: ["100% organic cotton", "Pre-shrunk", "Comfortable fit", "Multiple colors"]
   },
   {
@@ -695,7 +695,7 @@ export const productsData = [
     sold: 3420,
     badge: "top-rated",
     description: "Premium denim jeans with perfect fit and timeless style.",
-    image: "/asset/products/fashion/jeans.jfif",
+    image: "asset/products/fashion/jeans.jfif",
     details: ["100% cotton denim", "5-pocket design", "Classic blue", "Comfortable waist"]
   },
   {
@@ -709,7 +709,7 @@ export const productsData = [
     reviews: 567,
     sold: 1890,
     description: "Warm water-resistant parka jacket for winter weather.",
-    image: "/asset/products/fashion/jacket.jfif",
+    image: "asset/products/fashion/jacket.jfif",
     details: ["Water-resistant", "Insulated lining", "Multiple pockets", "Adjustable hood"]
   },
   {
@@ -723,7 +723,7 @@ export const productsData = [
     reviews: 445,
     sold: 2340,
     description: "Light and breathable sundress perfect for summer days.",
-    image: "/asset/products/fashion/sundress.jfif",
+    image: "asset/products/fashion/sundress.jfif",
     details: ["Breathable fabric", "Adjustable straps", "Flowy design", "Multiple prints"]
   },
   {
@@ -737,7 +737,7 @@ export const productsData = [
     reviews: 612,
     sold: 3210,
     description: "Lightweight mesh athletic shorts for gym and outdoor activities.",
-    image: "/asset/products/fashion/short.jfif",
+    image: "asset/products/fashion/short.jfif",
     details: ["Mesh material", "Moisture-wicking", "Pockets", "Quick-dry"]
   },
   {
@@ -766,7 +766,7 @@ export const productsData = [
     sold: 2890,
     badge: "bestseller",
     description: "High-waisted yoga leggings with pockets and moisture control.",
-    image: "/asset/products/fashion/highwist.jfif",
+    image: "asset/products/fashion/highwist.jfif",
     details: ["High-waist design", "Side pockets", "Moisture-wicking", "4-way stretch"]
   },
   {
@@ -780,7 +780,7 @@ export const productsData = [
     reviews: 456,
     sold: 1230,
     description: "Slim-fit blazer perfect for professional and casual wear.",
-    image: "/asset/products/fashion/blazer.jfif",
+    image: "asset/products/fashion/blazer.jfif",
     details: ["Slim fit", "Two-button design", "Lined", "Pressed crease"]
   },
   {
@@ -794,7 +794,7 @@ export const productsData = [
     reviews: 678,
     sold: 4560,
     description: "Durable canvas backpack with padded laptop compartment.",
-    image: "/asset/products/fashion/bag.jfif",
+    image: "asset/products/fashion/bag.jfif",
     details: ["Canvas material", "Laptop compartment", "USB charging port", "Water-resistant"]
   },
   {
@@ -808,7 +808,7 @@ export const productsData = [
     reviews: 523,
     sold: 3210,
     description: "RFID blocking leather wallet with multiple card slots.",
-    image: "/asset/products/fashion/wallet.jfif",
+    image: "asset/products/fashion/wallet.jfif",
     details: ["RFID blocking", "Genuine leather", "8 card slots", "Slim design"]
   },
   {
@@ -823,7 +823,7 @@ export const productsData = [
     sold: 5670,
     badge: "top-rated",
     description: "Classic white casual sneakers that go with everything.",
-    image: "/asset/products/fashion/sneaker.jfif",
+    image: "asset/products/fashion/sneaker.jfif",
     details: ["Premium white leather", "Comfortable sole", "Versatile style", "Easy to clean"]
   },
   {
@@ -837,7 +837,7 @@ export const productsData = [
     reviews: 445,
     sold: 2890,
     description: "Warm beanie hat in multiple colors for winter season.",
-    image: "/asset/products/fashion/winterhat.jfif",
+    image: "asset/products/fashion/winterhat.jfif",
     details: ["Acrylic blend", "Stretchy fit", "Multiple colors", "Warm and cozy"]
   },
   {
@@ -851,7 +851,7 @@ export const productsData = [
     reviews: 612,
     sold: 2120,
     description: "Stylish sunglasses with 100% UV protection.",
-    image: "/asset/products/fashion/sunglass.jfif",
+    image: "asset/products/fashion/sunglass.jfif",
     details: ["100% UV protection", "Polarized lenses", "Metal frame", "Case included"]
   },
   {
@@ -865,7 +865,7 @@ export const productsData = [
     reviews: 378,
     sold: 1450,
     description: "Premium silk scarf with elegant patterns.",
-    image: "/asset/products/fashion/scraf.jfif",
+    image: "asset/products/fashion/scraf.jfif",
     details: ["100% silk", "Hand-finished", "Multiple patterns", "Travel friendly"]
   }
 ];
