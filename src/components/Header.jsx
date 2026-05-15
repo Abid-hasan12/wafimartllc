@@ -4,7 +4,7 @@ import { useAppContext } from '../context/AppContext';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { Search, ShoppingCart, User, Menu, X, ChevronDown, Grid } from 'lucide-react';
-import logo from '../assets/logo.PNG';
+import logo from '../asset/logo.PNG';
 
 function Header() {
     const { categories, searchQuery, setSearchQuery } = useAppContext();
