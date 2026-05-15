@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
-import logo from '../assets/logo.png';
 
 function Footer() {
   const [email, setEmail] = useState('');
@@ -24,7 +23,7 @@ function Footer() {
           {/* Column 1: Brand */}
           <div className="space-y-4">
             <Link to="/">
-              <img src={logo} alt="WafiMartLLC Logo" className="h-12 w-auto object-contain" />
+              <img src="/asset/logo.png" alt="WafiMartLLC Logo" className="h-20 w-auto object-contain" />
             </Link>
             <p className="text-sm leading-6 text-slate-400">
               Your premium e-commerce destination for quality products and exceptional service.

@@ -63,12 +63,12 @@ function ProductCard({ product }) {
           Added to cart
         </div>
       )}
-      <div className="relative overflow-hidden rounded-t-xl">
+      <div className="relative aspect-square overflow-hidden rounded-t-xl bg-gray-100">
         <Link to={`/product/${product.id}`} className="block">
           <img
             src={product.image}
             alt={product.name}
-            className="h-32 w-full object-cover object-center transition duration-500 group-hover:scale-105"
+            className="h-auto w-full object-contain object-center transition duration-500 group-hover:scale-105"
             style={{ imageRendering: 'auto' }}
           />
         </Link>

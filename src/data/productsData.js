@@ -14,7 +14,7 @@ export const productsData = [
     sold: 2340,
     badge: "bestseller",
     description: "A premium 65-inch 4K smart TV with HDR, voice control, and seamless streaming support.",
-    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/electronics/tv.jfif",
     details: ["65-inch 4K UHD display", "Built-in streaming apps", "Voice assistant ready", "Sleek edge-to-edge design"]
   },
   {
@@ -29,7 +29,7 @@ export const productsData = [
     sold: 5680,
     badge: "top-rated",
     description: "Noise-canceling over-ear headphones with 30-hour battery life and premium sound quality.",
-    image: "https://images.unsplash.com/photo-1512499617640-c2f99912e777?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/electronics/headphone.jfif",
     details: ["Active noise cancellation", "30-hour battery life", "Fast charging", "Comfort-fit ear cushions"]
   },
   {
@@ -44,7 +44,7 @@ export const productsData = [
     sold: 890,
     badge: "new",
     description: "Full-frame mirrorless camera with 45MP sensor and advanced autofocus system.",
-    image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=500&q=80",
+        image: "/asset/products/electronics/camera.jfif",
     details: ["45MP full-frame sensor", "8K video capability", "Weather-sealed body", "Built-in Wi-Fi & Bluetooth"]
   },
   {
@@ -59,7 +59,7 @@ export const productsData = [
     sold: 3420,
     badge: "bestseller",
     description: "High-performance gaming laptop with RTX 4070 and 16-inch QHD display.",
-    image: "https://images.unsplash.com/photo-1588872657840-218e412ee5ff?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/electronics/laptop.jfif",
     details: ["RTX 4070 GPU", "Intel i9 Processor", "32GB RAM", "1TB SSD", "144Hz QHD Display"]
   },
   {
@@ -74,7 +74,7 @@ export const productsData = [
     sold: 4120,
     badge: "trending",
     description: "Advanced fitness tracking with health monitoring and 7-day battery life.",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/electronics/watch.jfif",
     details: ["AMOLED Display", "Heart rate monitor", "GPS tracking", "Water resistant to 50m"]
   },
   {
@@ -88,7 +88,7 @@ export const productsData = [
     reviews: 567,
     sold: 2890,
     description: "Fast wireless charging dock for phones, watches, and earbuds simultaneously.",
-    image: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=500&q=80",
+      image: "/asset/products/electronics/charger.jfif",
     details: ["Multi-device charging", "Fast charge support", "Compact design", "Over-heat protection"]
   },
   {
@@ -103,7 +103,7 @@ export const productsData = [
     sold: 3210,
     badge: "top-rated",
     description: "Ultra-fast portable SSD with 2TB storage and military-grade protection.",
-    image: "https://images.unsplash.com/photo-1505394033641-7a8df5e54308?auto=format&fit=crop&w=500&q=80",
+      image: "/asset/products/electronics/ssd.jfif",
     details: ["2TB capacity", "1050MB/s speed", "Shock resistant", "Compact design"]
   },
   {
@@ -117,7 +117,7 @@ export const productsData = [
     reviews: 445,
     sold: 1980,
     description: "Professional 4K webcam with auto-focus and built-in microphone for streaming.",
-    image: "https://images.unsplash.com/photo-1598050108023-50a91a60475e?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/electronics/webcam.jfif",
     details: ["4K resolution", "Auto-focus lens", "Stereo microphone", "Wide-angle view"]
   },
   {
@@ -131,7 +131,7 @@ export const productsData = [
     reviews: 612,
     sold: 2450,
     description: "Minimal smart ring for sleep tracking, health metrics, and notifications.",
-    image: "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/electronics/ringwatch.jfif",
     details: ["Sleep tracking", "Heart rate sensor", "14-day battery", "Water resistant"]
   },
   {
@@ -145,7 +145,7 @@ export const productsData = [
     reviews: 923,
     sold: 5340,
     description: "Premium mechanical keyboard with RGB lighting and programmable keys.",
-    image: "https://images.unsplash.com/photo-1587829191301-899f67d5c624?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/electronics/rgbkeyboard.jfif",
     details: ["Mechanical switches", "RGB backlighting", "Programmable keys", "Aluminum frame"]
   },
   {
@@ -159,7 +159,7 @@ export const productsData = [
     reviews: 678,
     sold: 4120,
     description: "Versatile USB-C hub with multiple ports for connectivity and charging.",
-    image: "https://images.unsplash.com/photo-1625948515291-69613efd103f?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/electronics/usbhub.jfif",
     details: ["7 ports", "100W PD charging", "4K HDMI", "SD card reader"]
   },
   {
@@ -174,7 +174,7 @@ export const productsData = [
     sold: 1230,
     badge: "new",
     description: "FPV racing drone with HD camera and extended flight time.",
-    image: "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/electronics/drone.jfif",
     details: ["1080p HD camera", "25 min flight time", "FPV goggles included", "Racing ready"]
   },
   {
@@ -188,7 +188,7 @@ export const productsData = [
     reviews: 1045,
     sold: 6780,
     description: "Portable Bluetooth speaker with 360° sound and waterproof design.",
-    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/electronics/jbl.jfif",
     details: ["360° sound", "IPX7 waterproof", "20-hour battery", "Bass boost mode"]
   },
   {
@@ -202,7 +202,7 @@ export const productsData = [
     reviews: 789,
     sold: 3920,
     description: "Ergonomic wireless mouse with precision tracking and silent clicks.",
-    image: "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/electronics/mousepro.jfif",
     details: ["Ergonomic design", "Silent clicking", "8000 DPI", "6-month battery"]
   },
   {
@@ -216,7 +216,7 @@ export const productsData = [
     reviews: 543,
     sold: 2890,
     description: "Premium aluminum laptop stand for better ergonomics and cooling.",
-    image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=500&q=80",
+       image: "/asset/products/electronics/laptopstand.jfif",
     details: ["Aluminum construction", "Adjustable height", "Supports up to 15kg", "Portable"]
   },
 
@@ -666,7 +666,7 @@ export const productsData = [
     sold: 4230,
     badge: "bestseller",
     description: "Lightweight running shoes engineered for comfort, stability, and all-day wear.",
-    image: "asset/products/fashion/runningshoe.jfif",
+    image: "/asset/products/fashion/runningshoe.jfif",
     details: ["Breathable mesh upper", "Responsive cushioning", "Durable rubber outsole", "Flexible performance fit"]
   },
   {
@@ -680,7 +680,7 @@ export const productsData = [
     reviews: 1240,
     sold: 8920,
     description: "Soft 100% cotton t-shirt available in multiple colors.",
-    image: "asset/products/fashion/tshirt.jfif",
+    image: "/asset/products/fashion/tshirt.jfif",
     details: ["100% organic cotton", "Pre-shrunk", "Comfortable fit", "Multiple colors"]
   },
   {
@@ -695,7 +695,7 @@ export const productsData = [
     sold: 3420,
     badge: "top-rated",
     description: "Premium denim jeans with perfect fit and timeless style.",
-    image: "asset/products/fashion/jeans.jfif",
+    image: "/asset/products/fashion/jeans.jfif",
     details: ["100% cotton denim", "5-pocket design", "Classic blue", "Comfortable waist"]
   },
   {
@@ -709,7 +709,7 @@ export const productsData = [
     reviews: 567,
     sold: 1890,
     description: "Warm water-resistant parka jacket for winter weather.",
-    image: "asset/products/fashion/jacket.jfif",
+    image: "/asset/products/fashion/jacket.jfif",
     details: ["Water-resistant", "Insulated lining", "Multiple pockets", "Adjustable hood"]
   },
   {
@@ -723,7 +723,7 @@ export const productsData = [
     reviews: 445,
     sold: 2340,
     description: "Light and breathable sundress perfect for summer days.",
-    image: "asset/products/fashion/sundress.jfif",
+    image: "/asset/products/fashion/sundress.jfif",
     details: ["Breathable fabric", "Adjustable straps", "Flowy design", "Multiple prints"]
   },
   {
@@ -737,7 +737,7 @@ export const productsData = [
     reviews: 612,
     sold: 3210,
     description: "Lightweight mesh athletic shorts for gym and outdoor activities.",
-    image: "asset/products/fashion/short.jfif",
+    image: "/asset/products/fashion/short.jfif",
     details: ["Mesh material", "Moisture-wicking", "Pockets", "Quick-dry"]
   },
   {
@@ -751,7 +751,7 @@ export const productsData = [
     reviews: 534,
     sold: 1890,
     description: "Soft wool sweater for comfortable layering.",
-    image: "https://images.unsplash.com/photo-1621572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/fashion/sweater.jfif",
     details: ["100% merino wool", "Soft texture", "Machine washable", "Multiple colors"]
   },
   {
@@ -766,7 +766,7 @@ export const productsData = [
     sold: 2890,
     badge: "bestseller",
     description: "High-waisted yoga leggings with pockets and moisture control.",
-    image: "asset/products/fashion/highwist.jfif",
+    image: "/asset/products/fashion/highwist.jfif",
     details: ["High-waist design", "Side pockets", "Moisture-wicking", "4-way stretch"]
   },
   {
@@ -780,7 +780,7 @@ export const productsData = [
     reviews: 456,
     sold: 1230,
     description: "Slim-fit blazer perfect for professional and casual wear.",
-    image: "asset/products/fashion/blazer.jfif",
+    image: "/asset/products/fashion/blazer.jfif",
     details: ["Slim fit", "Two-button design", "Lined", "Pressed crease"]
   },
   {
@@ -794,7 +794,7 @@ export const productsData = [
     reviews: 678,
     sold: 4560,
     description: "Durable canvas backpack with padded laptop compartment.",
-    image: "asset/products/fashion/bag.jfif",
+    image: "/asset/products/fashion/bag.jfif",
     details: ["Canvas material", "Laptop compartment", "USB charging port", "Water-resistant"]
   },
   {
@@ -808,7 +808,7 @@ export const productsData = [
     reviews: 523,
     sold: 3210,
     description: "RFID blocking leather wallet with multiple card slots.",
-    image: "asset/products/fashion/wallet.jfif",
+    image: "/asset/products/fashion/wallet.jfif",
     details: ["RFID blocking", "Genuine leather", "8 card slots", "Slim design"]
   },
   {
@@ -823,7 +823,7 @@ export const productsData = [
     sold: 5670,
     badge: "top-rated",
     description: "Classic white casual sneakers that go with everything.",
-    image: "asset/products/fashion/sneaker.jfif",
+    image: "/asset/products/fashion/sneaker.jfif",
     details: ["Premium white leather", "Comfortable sole", "Versatile style", "Easy to clean"]
   },
   {
@@ -837,7 +837,7 @@ export const productsData = [
     reviews: 445,
     sold: 2890,
     description: "Warm beanie hat in multiple colors for winter season.",
-    image: "asset/products/fashion/winterhat.jfif",
+    image: "/asset/products/fashion/winterhat.jfif",
     details: ["Acrylic blend", "Stretchy fit", "Multiple colors", "Warm and cozy"]
   },
   {
@@ -851,7 +851,7 @@ export const productsData = [
     reviews: 612,
     sold: 2120,
     description: "Stylish sunglasses with 100% UV protection.",
-    image: "asset/products/fashion/sunglass.jfif",
+    image: "/asset/products/fashion/sunglass.jfif",
     details: ["100% UV protection", "Polarized lenses", "Metal frame", "Case included"]
   },
   {
@@ -865,7 +865,7 @@ export const productsData = [
     reviews: 378,
     sold: 1450,
     description: "Premium silk scarf with elegant patterns.",
-    image: "asset/products/fashion/scraf.jfif",
+    image: "/asset/products/fashion/scarf.jfif",
     details: ["100% silk", "Hand-finished", "Multiple patterns", "Travel friendly"]
   }
 ];

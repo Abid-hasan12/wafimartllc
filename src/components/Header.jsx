@@ -4,7 +4,6 @@ import { useAppContext } from '../context/AppContext';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { Search, ShoppingCart, User, Menu, X, ChevronDown, Grid } from 'lucide-react';
-import logo from '../asset/logo.PNG';
 
 function Header() {
     const { categories, searchQuery, setSearchQuery } = useAppContext();
@@ -23,11 +22,11 @@ function Header() {
     };
 
     return (
-        <header className="sticky top-0 z-50 border-b border-blue-800 bg-blue-700 shadow-sm">
-            <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8" style={{height: '64px'}}>
+        <header className="sticky top-0 z-50 border-b border-blue-800 bg-blue-600 shadow-sm">
+            <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8" style={{ height: '64px' }}>
                 <div className="flex items-center gap-3 h-full">
                     <Link to="/" className="h-full flex items-center">
-                        <img src={logo} alt="WafiMartLLC Logo" className="h-full object-contain"/>
+                        <img src="/asset/logo.png" alt="WafiMartLLC Logo" className="h-36 object-contain" />
                     </Link>
 
                     <div className="relative hidden md:block">
