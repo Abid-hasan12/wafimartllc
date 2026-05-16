@@ -233,7 +233,7 @@ export const productsData = [
     sold: 1230,
     badge: "trending",
     description: "A modular, easy-clean sofa designed for modern living rooms and fast-paced families.",
-    image: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/home/sofa.jfif",
     details: ["Stain-resistant fabric", "Modular seating layout", "Soft foam cushions", "Solid hardwood frame"]
   },
   {
@@ -247,7 +247,7 @@ export const productsData = [
     reviews: 391,
     sold: 3420,
     description: "High-speed blender for smoothies, sauces, and meal prep with durable stainless-steel blades.",
-    image: "https://images.unsplash.com/photo-1516617442634-75371039cb3f?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/home/blender.jfif",
     details: ["1000W motor", "Variable speed control", "Dishwasher-safe jar", "6 preset programs"]
   },
   {
@@ -262,7 +262,7 @@ export const productsData = [
     sold: 2890,
     badge: "top-rated",
     description: "12-piece stainless steel cookware set with heat-resistant handles and non-stick coating.",
-    image: "https://images.unsplash.com/photo-1578500494198-246f612d782b?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/home/cookware.jfif",
     details: ["12-piece set", "Non-stick coating", "Heat-resistant handles", "Oven safe to 350°F"]
   },
   {
@@ -276,7 +276,7 @@ export const productsData = [
     reviews: 534,
     sold: 2120,
     description: "WiFi-enabled coffee maker with app control and programmable brewing.",
-    image: "https://images.unsplash.com/photo-1517668808822-9ebb02ae2a0e?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/home/coffee.jfif",
     details: ["WiFi control", "Timer function", "Keeps coffee warm", "Easy cleaning"]
   },
   {
@@ -290,7 +290,7 @@ export const productsData = [
     reviews: 423,
     sold: 890,
     description: "Modern minimalist dining table with oak wood and sleek metal base.",
-    image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/home/table.jfif",
     details: ["Solid oak wood", "Seats 6-8 people", "Metal frame base", "Easy to assemble"]
   },
   {
@@ -305,7 +305,7 @@ export const productsData = [
     sold: 2340,
     badge: "bestseller",
     description: "Smart air purifier with HEPA filter and app-controlled settings.",
-    image: "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/home/cooler.jfif",
     details: ["HEPA filter", "App control", "Quiet operation", "Covers 500 sq ft"]
   },
   {
@@ -319,7 +319,7 @@ export const productsData = [
     reviews: 892,
     sold: 4560,
     description: "Ultra-soft Egyptian cotton bed sheets with deep pockets.",
-    image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=500&q=80",
+   image: "/asset/products/home/bedsheet.jfif",
     details: ["100% cotton", "1000 thread count", "Deep pockets", "Fade resistant"]
   },
   {
@@ -334,7 +334,7 @@ export const productsData = [
     sold: 1980,
     badge: "top-rated",
     description: "Premium ergonomic office chair with lumbar support and mesh back.",
-    image: "https://images.unsplash.com/photo-1580978582278-abc5fede4b52?auto=format&fit=crop&w=500&q=80",
+   image: "/asset/products/home/chair.jfif",
     details: ["Lumbar support", "Mesh back", "Adjustable height", "Swivel base"]
   },
   {
@@ -348,7 +348,7 @@ export const productsData = [
     reviews: 456,
     sold: 3210,
     description: "4-slice stainless steel toaster with bagel and defrost settings.",
-    image: "https://images.unsplash.com/photo-1586985289688-cacf04900869?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/home/toaster.jfif",
     details: ["4-slice capacity", "Bagel/defrost settings", "Cancel button", "Crumb tray"]
   },
   {
@@ -362,7 +362,7 @@ export const productsData = [
     reviews: 623,
     sold: 2670,
     description: "Professional 7-piece knife set in premium wooden block.",
-    image: "https://images.unsplash.com/photo-1593618618987-a3e3a5f18b6b?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/home/knife.jfif",
     details: ["7-piece set", "German steel blades", "Wooden block", "Dishwasher safe"]
   },
   {
@@ -376,7 +376,7 @@ export const productsData = [
     reviews: 534,
     sold: 2340,
     description: "Digital microwave oven with 10 power levels and LED display.",
-    image: "https://images.unsplash.com/photo-1584568694244-14fbbc50bd94?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/home/wave.jfif",
     details: ["1000W power", "10 power levels", "LED display", "Sensor cooking"]
   },
   {
@@ -390,7 +390,7 @@ export const productsData = [
     reviews: 789,
     sold: 5890,
     description: "Eco-friendly bamboo cutting boards with non-slip surface.",
-    image: "https://images.unsplash.com/photo-1577720643272-265f434b4b0d?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/home/cutting.jfif",
     details: ["Bamboo material", "Non-slip base", "Easy cleaning", "Set of 2"]
   },
   {
@@ -404,7 +404,7 @@ export const productsData = [
     reviews: 445,
     sold: 1890,
     description: "Compact expandable dish drying rack with drainboard.",
-    image: "https://images.unsplash.com/photo-1578500494198-246f612d782b?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/home/rack.jfif",
     details: ["Expandable design", "Stainless steel", "Drainboard", "Compact storage"]
   },
   {
@@ -419,7 +419,7 @@ export const productsData = [
     sold: 7890,
     badge: "bestseller",
     description: "Double-walled insulated stainless steel bottle keeps drinks hot/cold for 24 hours.",
-    image: "https://images.unsplash.com/photo-1602143407151-7111542de6e9?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/home/waterbottle.jfif",
     details: ["Keeps cold 24hrs", "Keeps hot 12hrs", "Stainless steel", "Eco-friendly"]
   },
   {
@@ -433,7 +433,7 @@ export const productsData = [
     reviews: 567,
     sold: 2120,
     description: "Modern minimalist wall clock with silent sweep movement.",
-    image: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/home/clock.jfif",
     details: ["Silent movement", "Modern design", "Easy installation", "Battery included"]
   },
 
