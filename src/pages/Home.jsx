@@ -13,19 +13,19 @@ function Home() {
 
     const heroSlides = [
         {
-            imageUrl: 'https://images.unsplash.com/photo-1510557880182-3f8f9ac5a1b6?auto=format&fit=crop&w=1200&q=80',
+            imageUrl: '/asset/category/electronics.png',
             title: 'Electronics Essentials',
             subtitle: 'Discover cutting-edge devices, smart home gear, and premium tech with curated deals.',
             link: '/category/electronics',
         },
         {
-            imageUrl: 'https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=1200&q=80',
+            imageUrl: '/asset/category/fashion.png',
             title: 'Fashion Finds',
             subtitle: 'Refresh your wardrobe with trend-forward styles, accessories, and seasonal essentials.',
             link: '/category/fashion',
         },
         {
-            imageUrl: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80',
+            imageUrl: '/asset/category/home.png',
             title: 'Home Decor Updates',
             subtitle: 'Elevate your space with stylish furniture, decor accents, and curated inspiration.',
             link: '/category/home-kitchen',
@@ -148,22 +148,22 @@ function Home() {
                         {
                             name: 'Electronics',
                             slug: 'electronics',
-                            image: 'https://images.unsplash.com/photo-1505694915661-3aa76541e5ad?auto=format&fit=crop&w=600&q=80',
+                            image: '/asset/category/electronics.png',
                         },
                         {
                             name: 'Fashion',
                             slug: 'fashion',
-                            image: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=600&q=80',
+                            image: '/asset/category/fashion.png',
                         },
                         {
                             name: 'Home & Kitchen',
                             slug: 'home-kitchen',
-                            image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&q=80',
+                            image: '/asset/category/home.png',
                         },
                         {
                             name: 'Wellness',
                             slug: 'wellness',
-                            image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80',
+                            image: '/asset/category/wellness.png',
                         },
                     ].map((cat) => (
                         <Link
