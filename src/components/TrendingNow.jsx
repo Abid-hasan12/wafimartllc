@@ -28,13 +28,6 @@ const TrendingNow = () => {
                             <img src={product.image} alt={product.name} />
                             <span className="trending-badge">Trending</span>
                         </div>
-                        <div className="trending-info">
-                            {/* টাইটেল স্লাইস করার দরকার নেই, CSS handles line-clamp */}
-                            <div className="trending-name" title={product.name}>
-                                {product.name}
-                            </div>
-                            {/* প্রাইস ডিভটি এখান থেকে বাদ দেওয়া হয়েছে */}
-                        </div>
                     </div>
                 ))}
             </div>
