@@ -450,7 +450,7 @@ export const productsData = [
     sold: 4560,
     badge: "top-rated",
     description: "A curated wellness bundle with natural vitamins, sleep aids, and daily hydration support.",
-    image: "https://images.unsplash.com/photo-1535307671172-1fc6f0250372?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/kit.jfif",
     details: ["Natural vitamins", "Sleep support", "Hydration blend", "30-day supply"]
   },
   {
@@ -464,7 +464,7 @@ export const productsData = [
     reviews: 834,
     sold: 3210,
     description: "6mm thick eco-friendly yoga mat with non-slip surface and carrying strap.",
-    image: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/yogamat.jfif",
     details: ["6mm thickness", "Non-slip surface", "Carrying strap", "Eco-friendly TPE"]
   },
   {
@@ -478,7 +478,7 @@ export const productsData = [
     reviews: 456,
     sold: 1890,
     description: "Comfortable zafu meditation cushion filled with buckwheat hulls.",
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/cushion.jfif",
     details: ["Buckwheat filling", "Organic cotton", "Machine washable", "Portable"]
   },
   {
@@ -493,7 +493,7 @@ export const productsData = [
     sold: 5340,
     badge: "bestseller",
     description: "5-piece resistance bands set for home workouts with carrying bag.",
-    image: "https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/bands.jfif",
     details: ["5 resistance levels", "Carrying bag", "Latex-free", "Durable construction"]
   },
   {
@@ -507,7 +507,7 @@ export const productsData = [
     reviews: 678,
     sold: 2340,
     description: "Smart body scale with Bluetooth connectivity and health metrics tracking.",
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/scale.jfif",
     details: ["Bluetooth connected", "Health metrics", "App integration", "14-user capacity"]
   },
   {
@@ -521,7 +521,7 @@ export const productsData = [
     reviews: 534,
     sold: 3980,
     description: "Detox water bottle with fruit infuser compartment for healthy hydration.",
-    image: "https://images.unsplash.com/photo-1602143407151-7111542de6e9?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/infuser.jfif",
     details: ["Fruit infuser", "1 liter capacity", "Leak-proof", "BPA-free"]
   },
   {
@@ -535,7 +535,7 @@ export const productsData = [
     reviews: 789,
     sold: 2890,
     description: "Ultrasonic essential oil diffuser with 7 LED colors and auto shut-off.",
-    image: "https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/diffuser.jfif",
     details: ["Ultrasonic technology", "7 LED colors", "Auto shut-off", "Whisper quiet"]
   },
   {
@@ -550,7 +550,7 @@ export const productsData = [
     sold: 2120,
     badge: "trending",
     description: "High-density foam roller for muscle recovery and massage therapy.",
-    image: "https://images.unsplash.com/photo-1550259987-943a90edfee3?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/roller.jfif",
     details: ["High-density foam", "36-inch length", "Textured surface", "Recovery aid"]
   },
   {
@@ -564,7 +564,7 @@ export const productsData = [
     reviews: 845,
     sold: 4120,
     description: "24-piece herbal tea sampler with organic blends for relaxation.",
-    image: "https://images.unsplash.com/photo-1597318372441-c84e75a0c4e4?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/tea.jfif",
     details: ["24 tea bags", "Organic herbs", "No caffeine", "Multiple flavors"]
   },
   {
@@ -578,7 +578,7 @@ export const productsData = [
     reviews: 523,
     sold: 2670,
     description: "Luxury face masks spa kit with 5 different treatment masks.",
-    image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/spakit.jfif",
     details: ["5 mask types", "Natural ingredients", "Single use packets", "Spa quality"]
   },
   {
@@ -592,7 +592,7 @@ export const productsData = [
     reviews: 756,
     sold: 1890,
     description: "Memory foam pillow with cooling gel for better sleep quality.",
-    image: "https://images.unsplash.com/photo-1558525132-45e908b0e45e?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/pillow.jfif",
     details: ["Memory foam", "Cooling gel", "Hypoallergenic", "Ergonomic design"]
   },
   {
@@ -606,7 +606,7 @@ export const productsData = [
     reviews: 634,
     sold: 2340,
     description: "Complete vitamin bundle with D3, B-complex, and supplements.",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5f15714a0?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/vitamin.jfif",
     details: ["Complete vitamins", "3-month supply", "Natural ingredients", "Daily support"]
   },
   {
@@ -620,7 +620,7 @@ export const productsData = [
     reviews: 478,
     sold: 1920,
     description: "Acupressure mat with pillow for back pain relief and relaxation.",
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/acumat.jfif",
     details: ["ABS material", "6000 pressure points", "Includes pillow", "Pain relief"]
   },
   {
@@ -635,7 +635,7 @@ export const productsData = [
     sold: 3890,
     badge: "top-rated",
     description: "Advanced body composition scale with Bluetooth and app tracking.",
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/bluescale.jfif",
     details: ["11 metrics", "Bluetooth sync", "App integration", "15-user profiles"]
   },
   {
@@ -649,7 +649,7 @@ export const productsData = [
     reviews: 912,
     sold: 6450,
     description: "Electric shaker bottle for protein shakes and smoothies on-the-go.",
-    image: "https://images.unsplash.com/photo-1602143407151-7111542de6e9?auto=format&fit=crop&w=500&q=80",
+    image: "/asset/products/wellness/bottleblender.jfif",
     details: ["Electric mixing", "Rechargeable battery", "USB charging", "Travel friendly"]
   },
 
