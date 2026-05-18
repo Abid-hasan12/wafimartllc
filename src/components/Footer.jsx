@@ -22,8 +22,8 @@ function Footer() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: Brand */}
           <div className="space-y-4">
-            <Link to="/">
-              <img src="/asset/logo.png" alt="WafiMartLLC Logo" className="h-20 w-auto object-contain" />
+            <Link to="/" className="h-28 w-auto flex items-center bg-slate-850">
+              <img src="/asset/logow.png" alt="WafiMartLLC Logo" className="h-34 w-auto object-contain" />
             </Link>
             <p className="text-sm leading-6 text-slate-400">
               Your premium e-commerce destination for quality products and exceptional service.

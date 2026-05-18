@@ -25,8 +25,8 @@ function Header() {
         <header className="sticky top-0 z-50 border-b border-blue-800 bg-blue-600 shadow-sm">
             <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8" style={{ height: '64px' }}>
                 <div className="flex items-center gap-3 h-full">
-                    <Link to="/" className="h-full flex items-center">
-                        <img src="/asset/logo.png" alt="WafiMartLLC Logo" className="h-36 object-contain" />
+                    <Link to="/" className="h-full flex items-center border border-blue-700 bg-blue-700">
+                        <img src="/asset/logow.png" alt="WafiMartLLC Logo" className="h-36 object-contain" />
                     </Link>
 
                     <div className="relative hidden md:block">
