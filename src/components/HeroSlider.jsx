@@ -59,7 +59,7 @@ function HeroSlider({ slides }) {
             onKeyDown={(event) => event.key === 'Enter' && navigate(slide.link)}
           >
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
-            <div className="absolute bottom-8 left-8 right-8 max-w-2xl rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur-xl sm:p-8">
+            <div className="absolute bottom-8 left-8 right-8 max-w-2xl rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-transparent sm:p-8">
               <p className="text-xs uppercase tracking-[0.35em] text-slate-200">Featured category</p>
               <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">{slide.title}</h2>
               <p className="mt-3 max-w-xl text-sm leading-6 text-slate-200">{slide.subtitle}</p>
