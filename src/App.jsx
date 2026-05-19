@@ -22,6 +22,8 @@ import FAQ from './pages/FAQ';
 import TrackOrder from './pages/TrackOrder';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 function App() {
     return (
@@ -52,6 +54,8 @@ function App() {
                     <Route path="/track-order" element={<TrackOrder />} />
                     <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/contact-us" element={<ContactUs />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                    <Route path="/terms-of-service" element={<TermsOfService />} />
                 </Routes>
             </main>
 

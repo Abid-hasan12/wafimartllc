@@ -186,13 +186,26 @@ function Footer() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between text-sm text-slate-400">
           <p>&copy; 2026 WafiMartLLC. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="transition hover:text-white">
+            <Link
+              to="/privacy-policy"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="text-sm text-slate-400 transition hover:text-white cursor-pointer"
+            >
               Privacy Policy
-            </a>
-            <a href="#" className="transition hover:text-white">
+            </Link>
+            <Link
+              to="/terms-of-service"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="text-sm text-slate-400 transition hover:text-white cursor-pointer"
+            >
               Terms of Service
-            </a>
-            <a href="#" className="font-semibold text-slate-300 transition hover:text-white">
+            </Link>
+            <a
+              href="https://www.wafimartllc.com/"
+              target="_blank"           
+              rel="noopener noreferrer"  
+              className="font-semibold text-slate-300 transition hover:text-white"
+            >
               www.wafimartllc.com
             </a>
           </div>
