@@ -16,6 +16,10 @@ import SignUp from './pages/SignUp';
 import Profile from './pages/Profile';
 import MyOrders from './pages/MyOrders';
 import OrderDetails from './pages/OrderDetails';
+import ShippingPolicy from './pages/ShippingPolicy';
+import Returns from './pages/Returns';
+import FAQ from './pages/FAQ';
+import TrackOrder from './pages/TrackOrder';
 
 function App() {
     return (
@@ -40,6 +44,10 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/profile" element={<Profile />} />
+                    <Route path="/shipping-policy" element={<ShippingPolicy />} />
+                    <Route path="/returns" element={<Returns />} />
+                    <Route path="/faq" element={<FAQ />} />
+                    <Route path="/track-order" element={<TrackOrder />} />
                 </Routes>
             </main>
 

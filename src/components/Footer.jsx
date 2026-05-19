@@ -21,13 +21,20 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: Brand */}
-          <div className="space-y-4">
-            <Link to="/" className="h-28 w-auto flex items-center bg-slate-850">
-              <img src="/asset/logow.png" alt="WafiMartLLC Logo" className="h-34 w-auto object-contain" />
+          <div className="space-y-2">
+            <Link to="/"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="inline-flex items-center transition hover:opacity-85">
+              <img
+                src="/asset/logow.png"
+                alt="WafiMartLLC Logo"
+                className="h-32 w-auto object-contain"
+              />
             </Link>
             <p className="text-sm leading-6 text-slate-400">
               Your premium e-commerce destination for quality products and exceptional service.
             </p>
+            {/* সোশ্যাল মিডিয়া আইকনগুলো */}
             <div className="flex gap-4">
               <a href="#" aria-label="Facebook" className="rounded-full bg-slate-800 p-2.5 text-slate-300 transition hover:bg-blue-600 hover:text-white">
                 <Facebook className="h-4 w-4" />
@@ -67,18 +74,41 @@ function Footer() {
           <div className="space-y-4">
             <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-white">Customer Service</h3>
             <nav className="space-y-3">
-              <a href="#" className="block text-sm text-slate-400 transition hover:text-white">
+              {/* 💡 Shipping Policy Link */}
+              <Link
+                to="/shipping-policy"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="block text-sm text-slate-400 transition hover:text-white cursor-pointer"
+              >
                 Shipping Policy
-              </a>
-              <a href="#" className="block text-sm text-slate-400 transition hover:text-white">
+              </Link>
+
+              {/* 💡 Returns Link */}
+              <Link
+                to="/returns"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="block text-sm text-slate-400 transition hover:text-white cursor-pointer"
+              >
                 Returns
-              </a>
-              <a href="#" className="block text-sm text-slate-400 transition hover:text-white">
+              </Link>
+
+              {/* 💡 FAQ Link */}
+              <Link
+                to="/faq"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="block text-sm text-slate-400 transition hover:text-white cursor-pointer"
+              >
                 FAQ
-              </a>
-              <a href="#" className="block text-sm text-slate-400 transition hover:text-white">
+              </Link>
+
+              {/* 💡 Track Order Link */}
+              <Link
+                to="/track-order"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="block text-sm text-slate-400 transition hover:text-white cursor-pointer"
+              >
                 Track Order
-              </a>
+              </Link>
             </nav>
           </div>
 
