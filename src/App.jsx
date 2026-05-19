@@ -21,6 +21,7 @@ import Returns from './pages/Returns';
 import FAQ from './pages/FAQ';
 import TrackOrder from './pages/TrackOrder';
 import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
 
 function App() {
     return (
@@ -50,6 +51,7 @@ function App() {
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/track-order" element={<TrackOrder />} />
                     <Route path="/about-us" element={<AboutUs />} />
+                    <Route path="/contact-us" element={<ContactUs />} />
                 </Routes>
             </main>
 

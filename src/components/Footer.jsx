@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
+import { Mail, Facebook, Instagram, Twitter, Linkedin, Phone, MapPin, Clock } from 'lucide-react';
 
 function Footer() {
   const [email, setEmail] = useState('');
@@ -68,9 +68,41 @@ function Footer() {
               >
                 About Us
               </Link>
-              <a href="#" className="block text-sm text-slate-400 transition hover:text-white">
-                Contact
-              </a>
+              <div className="space-y-4">
+                <ul className="space-y-3 text-sm text-slate-400">
+                  <li className="flex items-start gap-3">
+                    <MapPin className="h-5 w-5 shrink-0 text-indigo-500 mt-0.5" />
+                    <span>Banasree, Rampura, Dhaka, Bangladesh</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Phone className="h-5 w-5 shrink-0 text-indigo-500" />
+                    <a href="tel:+880123456789" className="hover:text-white transition">+880 1234-567890</a>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Mail className="h-5 w-5 shrink-0 text-indigo-500" />
+                    <a href="mailto:support@wafimartllc.com" className="hover:text-white transition">support@wafimartllc.com</a>
+                  </li>
+                  <li className="flex items-start gap-3 pt-2 border-t border-slate-800">
+                    <Clock className="h-5 w-5 shrink-0 text-indigo-500 mt-0.5" />
+                    <div>
+                      <p className="text-xs font-semibold text-slate-300">Working Hours:</p>
+                      <p className="text-xs">Sat - Thu: 10:00 AM - 8:00 PM</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div className="pt-2">
+                <Link
+                  to="/contact-us"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-xs font-semibold text-white transition hover:bg-indigo-700 shadow-md shadow-indigo-900/20 active:scale-95"
+                >
+                  <span>Contact Us</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+              </div>
             </nav>
           </div>
 
