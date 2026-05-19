@@ -49,13 +49,13 @@ function ProductDetails() {
 
   return (
     <div className="space-y-10">
-      <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-        <section className="space-y-6 rounded-[2rem] bg-white p-8 shadow-soft">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+        <section className="space-y-6 rounded-[2rem] bg-white p-4 sm:p-6 md:p-8 shadow-soft">
           <div className="space-y-4">
             <img
               src={thumbnails[selectedImage]}
               alt={product.name}
-              className="h-[500px] w-full rounded-[2rem] object-cover"
+              className="w-full max-h-[350px] rounded-[2rem] object-contain"
             />
             <div className="flex gap-3 overflow-x-auto">
               {thumbnails.map((thumb, index) => (
@@ -112,7 +112,7 @@ function ProductDetails() {
           </div>
         </section>
 
-        <aside className="space-y-6 rounded-[2rem] bg-white p-8 shadow-soft h-fit sticky top-24">
+        <aside className="space-y-6 rounded-[2rem] bg-white p-4 sm:p-6 md:p-8 shadow-soft h-fit md:sticky md:top-24">
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 space-y-6">
             <div>
               <p className="text-sm uppercase tracking-[0.28em] text-slate-500">Price</p>
@@ -189,7 +189,7 @@ function ProductDetails() {
             <p className="text-sm uppercase tracking-[0.3em] text-slate-500">Related products</p>
             <h2 className="mt-2 text-3xl font-semibold text-slate-900">You might also like</h2>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid gap-4 justify-items-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {relatedProducts.map((relatedProduct) => (
               <ProductCard key={relatedProduct.id} product={relatedProduct} />
             ))}
