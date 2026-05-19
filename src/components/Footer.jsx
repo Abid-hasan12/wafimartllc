@@ -61,9 +61,13 @@ function Footer() {
               <Link to="/category/all" className="block text-sm text-slate-400 transition hover:text-white">
                 Categories
               </Link>
-              <a href="#" className="block text-sm text-slate-400 transition hover:text-white">
+              <Link
+                to="/about-us"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="block text-sm text-slate-400 transition hover:text-white cursor-pointer"
+              >
                 About Us
-              </a>
+              </Link>
               <a href="#" className="block text-sm text-slate-400 transition hover:text-white">
                 Contact
               </a>

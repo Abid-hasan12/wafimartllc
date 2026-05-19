@@ -20,6 +20,7 @@ import ShippingPolicy from './pages/ShippingPolicy';
 import Returns from './pages/Returns';
 import FAQ from './pages/FAQ';
 import TrackOrder from './pages/TrackOrder';
+import AboutUs from './pages/AboutUs';
 
 function App() {
     return (
@@ -48,6 +49,7 @@ function App() {
                     <Route path="/returns" element={<Returns />} />
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/track-order" element={<TrackOrder />} />
+                    <Route path="/about-us" element={<AboutUs />} />
                 </Routes>
             </main>
 
