@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { productsData } from '../data/productsData';
 import './TrendingNow.css';
 
@@ -14,6 +15,11 @@ const getTrendingProducts = () => {
 
 const TrendingNow = () => {
     const trendingProducts = getTrendingProducts();
+    const navigate = useNavigate();
+
+    const handleCardClick = (id) => {
+        navigate(`/productdetails/${id}`);
+    };
 
     return (
         <section className="trending-now-section">
@@ -23,7 +29,15 @@ const TrendingNow = () => {
             </div>
             <div className="trending-slider">
                 {trendingProducts.map((product) => (
-                    <div className="trending-card" key={product.id}>
+                    <div
+                        className="trending-card"
+                        key={product.id}
+                        onClick={() => handleCardClick(product.id)}
+                        style={{ cursor: 'pointer' }}
+                        tabIndex={0}
+                        role="button"
+                        onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && handleCardClick(product.id)}
+                    >
                         <div className="trending-img-wrap">
                             <img src={product.image} alt={product.name} />
                             <span className="trending-badge">Trending</span>

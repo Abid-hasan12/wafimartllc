@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { ShoppingCart, Star } from 'lucide-react';
 
 function ProductCard({ product }) {
   const { addToCart } = useCart();
   const [added, setAdded] = useState(false);
+  const navigate = useNavigate();
 
   const handleAdd = () => {
     addToCart(product);
@@ -56,10 +57,17 @@ function ProductCard({ product }) {
     );
   };
 
+  const handleCardClick = (e) => {
+    // Prevent navigation if clicking the add-to-cart button or its children
+    if (e.target.closest('button')) return;
+    navigate(`/productdetails/${product.id}`);
+  };
+
   return (
     <article
-      className="relative group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-xl max-w-[270px] min-h-[250px]"
+      className="relative group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-xl max-w-[270px] min-h-[250px] cursor-pointer"
       style={{ touchAction: 'pan-y' }}
+      onClick={handleCardClick}
     >
       {added && (
         <div className="absolute left-2 top-2 z-20 rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] font-semibold text-white shadow-lg">
@@ -67,14 +75,12 @@ function ProductCard({ product }) {
         </div>
       )}
       <div className="relative aspect-square overflow-hidden rounded-t-xl bg-gray-100">
-        <Link to={`/product/${product.id}`} className="block">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="h-auto w-full object-contain object-center transition duration-500 group-hover:scale-105"
-            style={{ imageRendering: 'auto' }}
-          />
-        </Link>
+        <img
+          src={product.image}
+          alt={product.name}
+          className="h-auto w-full object-contain object-center transition duration-500 group-hover:scale-105"
+          style={{ imageRendering: 'auto' }}
+        />
         {product.badge && (
           <div className={`absolute right-2 top-2 rounded-full px-2 py-0.5 text-[10px] font-bold ${getBadgeStyles(product.badge)}`}>
             {getBadgeLabel(product.badge)}
@@ -88,11 +94,9 @@ function ProductCard({ product }) {
           {renderStars(product.rating)}
         </div>
 
-        <Link to={`/product/${product.id}`} className="block">
-          <h3 className="text-sm font-semibold text-slate-900 transition group-hover:text-indigo-600 line-clamp-2">
-            {product.name}
-          </h3>
-        </Link>
+        <h3 className="text-sm font-semibold text-slate-900 transition group-hover:text-indigo-600 line-clamp-2">
+          {product.name}
+        </h3>
 
         <p className="text-xs leading-5 text-slate-600 line-clamp-2">{product.description}</p>
 
@@ -115,6 +119,7 @@ function ProductCard({ product }) {
             onClick={handleAdd}
             className="flex items-center justify-center gap-1 rounded-full bg-indigo-600 px-2 py-1 text-[10px] font-semibold text-white transition hover:bg-indigo-700 active:scale-95 min-w-[28px]"
             aria-label="Add to cart"
+            onClick={(e) => { e.stopPropagation(); handleAdd(); }}
           >
             <ShoppingCart className="h-3.5 w-3.5" />
             <span className="hidden sm:inline">Add</span>

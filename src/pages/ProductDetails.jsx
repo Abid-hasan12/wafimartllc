@@ -1,6 +1,6 @@
-import { useMemo, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useAppContext } from '../context/AppContext';
+import { productsData } from '../data/productsData';
 import { useCart } from '../context/CartContext';
 import ProductCard from '../components/ProductCard';
 import { ShoppingCart, Minus, Plus, Star } from 'lucide-react';
@@ -8,27 +8,21 @@ import { ShoppingCart, Minus, Plus, Star } from 'lucide-react';
 function ProductDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { products } = useAppContext();
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
   const [addedToCart, setAddedToCart] = useState(false);
 
-  // Auto scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
-
-  const product = useMemo(() => products.find((item) => item.id === id), [products, id]);
-
-  const relatedProducts = useMemo(
-    () => products.filter((p) => p.categorySlug === product?.categorySlug && p.id !== id).slice(0, 4),
-    [products, product?.categorySlug, id]
-  );
-
+  const product = productsData.find((item) => item.id.toString() === id.toString());
+  const relatedProducts = productsData
+    .filter((p) => p.categorySlug === product?.categorySlug && p.id.toString() !== id.toString())
+    .slice(0, 4);
   if (!product) {
     return (
-      <div className="rounded-3xl border border-slate-200 bg-white p-10 text-center shadow-soft">
+      <div className="max-w-md mx-auto my-10 rounded-3xl border border-slate-200 bg-white p-10 text-center shadow-soft">
         <p className="text-lg font-semibold text-slate-900">Product not found</p>
         <button
           onClick={() => navigate('/')}
@@ -68,9 +62,8 @@ function ProductDetails() {
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
-                  className={`h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl border-2 transition ${
-                    selectedImage === index ? 'border-indigo-600 shadow-md' : 'border-slate-200 hover:border-slate-300'
-                  }`}
+                  className={`h-20 w-20 flex-shrink-0 overflow-hidden rounded-2xl border-2 transition ${selectedImage === index ? 'border-indigo-600 shadow-md' : 'border-slate-200 hover:border-slate-300'
+                    }`}
                 >
                   <img src={thumb} alt={`View ${index}`} className="h-full w-full object-cover" />
                 </button>
@@ -95,14 +88,13 @@ function ProductDetails() {
                 <p className="mt-1 text-xs text-slate-500">{product.reviews.toLocaleString()} reviews</p>
               </div>
               {product.badge && (
-                <span className={`rounded-full px-3 py-1.5 text-xs font-bold text-white ${
-                  product.badge === 'bestseller' ? 'bg-red-500' :
+                <span className={`rounded-full px-3 py-1.5 text-xs font-bold text-white ${product.badge === 'bestseller' ? 'bg-red-500' :
                   product.badge === 'top-rated' ? 'bg-amber-500' :
-                  'bg-indigo-500'
-                }`}>
+                    'bg-indigo-500'
+                  }`}>
                   {product.badge === 'bestseller' ? '★ Best Seller' :
-                   product.badge === 'top-rated' ? '★ Top Rated' :
-                   '🔥 Trending'}
+                    product.badge === 'top-rated' ? '★ Top Rated' :
+                      '🔥 Trending'}
                 </span>
               )}
             </div>
@@ -157,11 +149,10 @@ function ProductDetails() {
 
             <button
               onClick={handleAddToCart}
-              className={`w-full rounded-full px-6 py-4 text-sm font-semibold transition flex items-center justify-center gap-2 ${
-                addedToCart
-                  ? 'bg-green-600 text-white'
-                  : 'bg-indigo-600 text-white hover:bg-indigo-700 active:scale-95'
-              }`}
+              className={`w-full rounded-full px-6 py-4 text-sm font-semibold transition flex items-center justify-center gap-2 ${addedToCart
+                ? 'bg-green-600 text-white'
+                : 'bg-indigo-600 text-white hover:bg-indigo-700 active:scale-95'
+                }`}
             >
               <ShoppingCart className="h-4 w-4" />
               {addedToCart ? 'Added to cart!' : 'Add to cart'}
