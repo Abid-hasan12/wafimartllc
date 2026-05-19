@@ -100,7 +100,7 @@ function Home() {
                     <div
                         ref={(el) => (scrollContainers.current[category.slug] = el)}
                         className="flex gap-4 overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth py-2 pl-14 pr-14"
-                        style={{ WebkitOverflowScrolling: 'touch', touchAction: 'pan-x' }}
+                        style={{ WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}
                     >
                         {categoryProducts.map((product) => (
                             <div

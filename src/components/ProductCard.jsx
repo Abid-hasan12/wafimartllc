@@ -57,7 +57,10 @@ function ProductCard({ product }) {
   };
 
   return (
-    <article className="relative group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-xl max-w-[270px] min-h-[250px]">
+    <article
+      className="relative group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-xl max-w-[270px] min-h-[250px]"
+      style={{ touchAction: 'pan-y' }}
+    >
       {added && (
         <div className="absolute left-2 top-2 z-20 rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] font-semibold text-white shadow-lg">
           Added to cart
