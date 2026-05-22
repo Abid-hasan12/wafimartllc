@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import MaintenanceModal from './components/MaintenanceModal';
 import ScrollToTop from './components/ScrollToTop';
 
 // Pages
@@ -28,8 +27,7 @@ import TermsOfService from './pages/TermsOfService';
 function App() {
     return (
         <div className="min-h-screen bg-slate-50 text-slate-900">
-            {/* মেইনটেন্যান্স পপআপ সবার উপরে থাকবে */}
-            <MaintenanceModal />
+            
 
             <Header />
 
