@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { productsData } from '../data/productsData';
 import './TrendingNow.css';
 
@@ -14,7 +14,8 @@ const getTrendingProducts = () => {
 };
 
 const TrendingNow = () => {
-    const trendingProducts = getTrendingProducts();
+    // Always get 6 trending products for display
+    const trendingProducts = getTrendingProducts().slice(0, 6);
     const navigate = useNavigate();
 
     const handleCardClick = (id) => {
@@ -27,10 +28,12 @@ const TrendingNow = () => {
                 <span className="trending-icon" role="img" aria-label="Trending">🔥</span>
                 <h2>Trending Now</h2>
             </div>
-            <div className="trending-slider">
-                {trendingProducts.map((product) => (
+            <div
+                className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-6 gap-4 justify-items-center items-stretch mx-auto"
+            >
+                {trendingProducts.map((product, idx) => (
                     <div
-                        className="trending-card"
+                        className={`trending-card block${idx === 5 ? ' md:last:hidden lg:last:block' : ''}`}
                         key={product.id}
                         onClick={() => handleCardClick(product.id)}
                         style={{ cursor: 'pointer' }}
@@ -44,6 +47,14 @@ const TrendingNow = () => {
                         </div>
                     </div>
                 ))}
+            </div>
+            <div className="flex justify-center">
+                <Link
+                    to="/trending-products"
+                    className="inline-block px-8 py-3 mt-4 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition-colors duration-200 text-lg"
+                >
+                    Explore More
+                </Link>
             </div>
         </section>
     );

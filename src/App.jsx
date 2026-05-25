@@ -23,6 +23,7 @@ import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import TrendingProductsPage from './pages/TrendingProductsPage';
 
 function App() {
     return (
@@ -54,6 +55,7 @@ function App() {
                     <Route path="/contact-us" element={<ContactUs />} />
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="/terms-of-service" element={<TermsOfService />} />
+                    <Route path="/trending-products" element={<TrendingProductsPage />} />
                 </Routes>
             </main>
 
