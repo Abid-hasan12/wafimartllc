@@ -99,13 +99,13 @@ function Home() {
 
                     <div
                         ref={(el) => (scrollContainers.current[category.slug] = el)}
-                        className="flex gap-4 overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth py-2 pl-14 pr-14"
+                        className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory py-2 pl-14 pr-14 custom-touch-scroll"
                         style={{ WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}
                     >
                         {categoryProducts.map((product) => (
                             <div
                                 key={product.id}
-                                className="flex-shrink-0 min-w-[min(100%,16rem)] sm:min-w-[calc(50%-1rem)] md:min-w-[calc(33.333%-1rem)] lg:min-w-[calc(25%-1rem)]"
+                                className="flex-shrink-0 snap-start min-w-[min(100%,16rem)] sm:min-w-[calc(50%-1rem)] md:min-w-[calc(33.333%-1rem)] lg:min-w-[calc(25%-1rem)]"
                             >
                                 <ProductCard product={product} />
                             </div>
