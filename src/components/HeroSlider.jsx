@@ -32,23 +32,6 @@ function HeroSlider({ slides }) {
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/50 to-transparent" />
       <div className="relative mx-auto flex max-w-7xl items-center gap-6 px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid w-full gap-8 lg:grid-cols-[0.8fr_0.4fr]">
-          <button
-            type="button"
-            onClick={() => setActiveIndex((current) => (isFirst ? slides.length - 1 : current - 1))}
-            className="group inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-white/20"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveIndex((current) => (isLast ? 0 : current + 1))}
-            className="group inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-white/20 self-start lg:self-end"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
 
           <div
             className="group relative h-[420px] overflow-hidden rounded-[2rem] bg-cover bg-center bg-no-repeat shadow-2xl sm:h-[480px]"
@@ -96,6 +79,25 @@ function HeroSlider({ slides }) {
           </div>
         </div>
       </div>
+
+      {/* Navigation Buttons */}
+      <button
+        type="button"
+        onClick={() => setActiveIndex((current) => (isFirst ? slides.length - 1 : current - 1))}
+        className="group absolute bottom-10 left-10 z-20 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-white/20"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+
+      <button
+        type="button"
+        onClick={() => setActiveIndex((current) => (isLast ? 0 : current + 1))}
+        className="group absolute bottom-10 right-10 z-20 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-white/20"
+        aria-label="Next slide"
+      >
+        <ChevronRight className="h-5 w-5" />
+      </button>
     </section>
   );
 }
