@@ -30,7 +30,7 @@ function HeroSlider({ slides }) {
   return (
     <section className="relative overflow-hidden rounded-[2rem] bg-slate-900 text-white shadow-soft">
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/50 to-transparent" />
-      <div className="relative mx-auto flex max-w-7xl items-center gap-6 px-4 py-16 sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex max-w-7xl items-center gap-6 px-4 py-8 sm:px-6 lg:px-8">
         <div className="grid w-full gap-8 lg:grid-cols-[0.8fr_0.4fr]">
 
           <div

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppContext } from '../context/AppContext';
 import { useCart } from '../context/CartContext';
@@ -13,7 +13,17 @@ function Header() {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [categoryOpen, setCategoryOpen] = useState(false);
     const [userDropdownOpen, setUserDropdownOpen] = useState(false);
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 640);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth < 640);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const handleSearchKey = (event) => {
         if (event.key === 'Enter') {
@@ -23,8 +33,8 @@ function Header() {
 
     return (
         <header className="sticky top-0 z-50 border-b border-blue-800 bg-blue-600 shadow-sm">
-            <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8" style={{ height: '64px' }}>
-                <div className="flex items-center gap-3 h-full">
+            <div className="mx-auto flex max-w-7xl items-center gap-2 sm:gap-3 px-2 sm:px-2 lg:px-8" style={{ height: '64px' }}>
+                <div className="flex items-center gap-2 sm:gap-3 h-full">
                     <Link to="/" className="h-full flex items-center border border-blue-700 bg-blue-700">
                         <img src="/asset/logow.png" alt="WafiMartLLC Logo" className="h-36 object-contain" />
                     </Link>
@@ -62,20 +72,20 @@ function Header() {
                     </div>
                 </div>
 
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                     <div className="relative">
                         <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/80" />
                         <input
                             value={searchQuery}
                             onChange={(event) => setSearchQuery(event.target.value)}
                             onKeyDown={handleSearchKey}
-                            placeholder="Search products, brands, categories"
+                            placeholder={isSmallScreen ? "Search..." : "Search products, brands, categories"}
                             className="w-full rounded-full border border-blue-700 bg-white py-3 pl-12 pr-4 text-sm text-slate-900 outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-200"
                         />
                     </div>
                 </div>
 
-                <div className="hidden items-center gap-3 md:flex">
+                <div className="hidden items-center gap-2 sm:gap-3 md:flex">
                     {user ? (
                         <div className="relative">
                             <button
@@ -147,7 +157,23 @@ function Header() {
 
                 <button
                     type="button"
-                    className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-blue-700 bg-blue-800 text-white transition hover:bg-blue-700 md:hidden"
+                    className="flex md:hidden items-center justify-center h-10 w-10 rounded-full border border-blue-700 bg-blue-800 text-white transition hover:bg-blue-700"
+                    onClick={() => {
+                        if (user) {
+                            navigate('/profile');
+                        } else {
+                            navigate('/login');
+                        }
+                    }}
+                    aria-label="Profile or Sign In"
+                    title={user ? `Go to ${user.username}'s profile` : 'Sign In'}
+                >
+                    <User className="h-5 w-5" />
+                </button>
+
+                <button
+                    type="button"
+                    className="flex md:hidden items-center justify-center h-10 w-10 rounded-full border border-blue-700 bg-blue-800 text-white transition hover:bg-blue-700"
                     onClick={() => setMobileOpen((current) => !current)}
                     aria-label="Toggle menu"
                 >
@@ -163,7 +189,7 @@ function Header() {
                             value={searchQuery}
                             onChange={(event) => setSearchQuery(event.target.value)}
                             onKeyDown={handleSearchKey}
-                            placeholder="Search products, brands, categories"
+                            placeholder={isSmallScreen ? "Search..." : "Search products, brands, categories"}
                             className="w-full rounded-full border border-blue-700 bg-white py-3 pl-10 pr-4 text-sm text-slate-900 outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-200"
                         />
                     </div>
