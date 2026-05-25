@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
@@ -57,6 +57,41 @@ function Home() {
 
     const CategorySection = ({ category }) => {
         const categoryProducts = getProductsByCategory(category.slug);
+        const [activeIndex, setActiveIndex] = useState(0);
+        const scrollRef = useRef(null);
+
+        // Detect which card is centered in the viewport
+        useEffect(() => {
+            const container = scrollRef.current;
+            if (!container) return;
+
+            const handleScroll = () => {
+                // Calculate the center point of the visible viewport
+                const containerCenter = container.scrollLeft + container.clientWidth / 2;
+                let closestCardIndex = 0;
+                let closestDistance = Infinity;
+
+                const cardElements = container.querySelectorAll('[data-product-index]');
+
+                cardElements.forEach((card, index) => {
+                    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+                    const distance = Math.abs(cardCenter - containerCenter);
+
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
+                        closestCardIndex = index;
+                    }
+                });
+
+                setActiveIndex(closestCardIndex);
+            };
+
+            container.addEventListener('scroll', handleScroll);
+            // Set initial active card
+            handleScroll();
+
+            return () => container.removeEventListener('scroll', handleScroll);
+        }, [categoryProducts.length]);
 
         return (
             <section key={category.slug} className="space-y-6 py-8">
@@ -98,18 +133,39 @@ function Home() {
                     </div>
 
                     <div
-                        ref={(el) => (scrollContainers.current[category.slug] = el)}
+                        ref={(el) => {
+                            scrollContainers.current[category.slug] = el;
+                            scrollRef.current = el;
+                        }}
                         className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory py-2 pl-14 pr-14 custom-touch-scroll"
                         style={{ WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}
                     >
-                        {categoryProducts.map((product) => (
-                            <div
-                                key={product.id}
-                                className="flex-shrink-0 snap-start min-w-[min(100%,16rem)] sm:min-w-[calc(50%-1rem)] md:min-w-[calc(33.333%-1rem)] lg:min-w-[calc(25%-1rem)]"
-                            >
-                                <ProductCard product={product} />
-                            </div>
-                        ))}
+                        {categoryProducts.map((product, index) => {
+                            const isActive = index === activeIndex;
+                            const isNeighbor = Math.abs(index - activeIndex) === 1;
+
+                            return (
+                                <div
+                                    key={product.id}
+                                    data-product-index={index}
+                                    className={`flex-shrink-0 snap-start transition-all duration-300
+                                        min-w-[min(100%,16rem)]
+                                        sm:min-w-[calc(50%-1rem)]
+                                        md:min-w-[calc(33.333%-1rem)]
+                                        lg:min-w-[calc(25%-1rem)]
+                                        ${
+                                            isActive
+                                                ? 'sm:scale-110 sm:z-10 md:scale-100 md:z-auto'
+                                                : isNeighbor
+                                                ? 'sm:scale-90 sm:opacity-70 md:scale-100 md:opacity-100'
+                                                : 'sm:scale-75 sm:opacity-40 md:scale-100 md:opacity-100'
+                                        }
+                                    `}
+                                >
+                                    <ProductCard product={product} />
+                                </div>
+                            );
+                        })}
                     </div>
 
                     <div className="pointer-events-none absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-slate-50 to-transparent z-10" />
