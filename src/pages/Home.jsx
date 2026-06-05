@@ -57,7 +57,7 @@ function Home() {
 
     const CategorySection = ({ category }) => {
         const categoryProducts = getProductsByCategory(category.slug);
-        const [activeIndex, setActiveIndex] = useState(0);
+        const [activeIndex, setActiveIndex] = useState({});
         const scrollRef = useRef(null);
 
         // Detect which card is centered in the viewport
@@ -65,7 +65,7 @@ function Home() {
             const container = scrollRef.current;
             if (!container) return;
 
-            const handleScroll = () => {
+            const handleCenterScroll = () => {
                 // Calculate the center point of the visible viewport
                 const containerCenter = container.scrollLeft + container.clientWidth / 2;
                 let closestCardIndex = 0;
@@ -83,15 +83,18 @@ function Home() {
                     }
                 });
 
-                setActiveIndex(closestCardIndex);
+                setActiveIndex(prev => ({
+                    ...prev,
+                    [category.slug]: closestCardIndex
+                }));
             };
 
-            container.addEventListener('scroll', handleScroll);
+            container.addEventListener('scroll', handleCenterScroll);
             // Set initial active card
-            handleScroll();
+            handleCenterScroll();
 
-            return () => container.removeEventListener('scroll', handleScroll);
-        }, [categoryProducts.length]);
+            return () => container.removeEventListener('scroll', handleCenterScroll);
+        }, [categoryProducts.length, category.slug]);
 
         return (
             <section key={category.slug} className="space-y-6 py-8">
@@ -137,28 +140,24 @@ function Home() {
                             scrollContainers.current[category.slug] = el;
                             scrollRef.current = el;
                         }}
-                        className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory py-2 pl-14 pr-14 custom-touch-scroll"
-                        style={{ WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}
+                        className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory py-4 px-4 md:px-14 touch-pan-x"
                     >
                         {categoryProducts.map((product, index) => {
-                            const isActive = index === activeIndex;
-                            const isNeighbor = Math.abs(index - activeIndex) === 1;
+                            const isActive = activeIndex[category.slug] === index;
 
                             return (
                                 <div
                                     key={product.id}
                                     data-product-index={index}
-                                    className={`flex-shrink-0 snap-start transition-all duration-300
+                                    className={`snap-center inline-block shrink-0 touch-pan-x transition-all duration-300
                                         min-w-[min(100%,16rem)]
                                         sm:min-w-[calc(50%-1rem)]
                                         md:min-w-[calc(33.333%-1rem)]
                                         lg:min-w-[calc(25%-1rem)]
                                         ${
                                             isActive
-                                                ? 'sm:scale-110 sm:z-10 md:scale-100 md:z-auto'
-                                                : isNeighbor
-                                                ? 'sm:scale-90 sm:opacity-70 md:scale-100 md:opacity-100'
-                                                : 'sm:scale-75 sm:opacity-40 md:scale-100 md:opacity-100'
+                                                ? 'scale-105 z-10 opacity-100 shadow-xl sm:scale-100 sm:opacity-100 sm:shadow-none sm:z-auto'
+                                                : 'scale-90 opacity-40 blur-[0.5px] sm:scale-100 sm:opacity-100 sm:blur-none'
                                         }
                                     `}
                                 >

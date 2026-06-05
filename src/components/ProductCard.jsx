@@ -42,13 +42,12 @@ function ProductCard({ product }) {
           {[...Array(5)].map((_, i) => (
             <Star
               key={i}
-              className={`h-3.5 w-3.5 ${
-                i < fullStars
+              className={`h-3.5 w-3.5 ${i < fullStars
                   ? 'fill-amber-400 text-amber-400'
                   : i === fullStars && hasHalf
                     ? 'fill-amber-400 text-amber-400'
                     : 'text-slate-300'
-              }`}
+                }`}
             />
           ))}
         </div>
@@ -116,10 +115,12 @@ function ProductCard({ product }) {
           </div>
           <button
             type="button"
-            onClick={handleAdd}
             className="flex items-center justify-center gap-1 rounded-full bg-indigo-600 px-2 py-1 text-[10px] font-semibold text-white transition hover:bg-indigo-700 active:scale-95 min-w-[28px]"
             aria-label="Add to cart"
-            onClick={(e) => { e.stopPropagation(); handleAdd(); }}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleAdd();
+            }}
           >
             <ShoppingCart className="h-3.5 w-3.5" />
             <span className="hidden sm:inline">Add</span>
