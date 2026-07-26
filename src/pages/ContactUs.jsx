@@ -40,7 +40,7 @@ function ContactUs() {
                         <div className="space-y-4 pt-4">
                             <div className="flex items-center gap-4">
                                 <div className="p-3 bg-slate-800 rounded-xl text-indigo-400"><Phone className="w-5 h-5" /></div>
-                                <div><p className="text-xs text-slate-400">Call Us</p><p className="text-sm font-semibold">+880 186361-8000</p></div>
+                                <div><p className="text-xs text-slate-400">Call Us</p><p className="text-sm font-semibold">+1 (346) 583-1671</p></div>
                             </div>
                             <div className="flex items-center gap-4">
                                 <div className="p-3 bg-slate-800 rounded-xl text-indigo-400"><Mail className="w-5 h-5" /></div>
@@ -48,7 +48,7 @@ function ContactUs() {
                             </div>
                             <div className="flex items-start gap-4">
                                 <div className="p-3 bg-slate-800 rounded-xl text-indigo-400 mt-0.5"><MapPin className="w-5 h-5" /></div>
-                                <div><p className="text-xs text-slate-400">Our Office</p><p className="text-sm font-semibold leading-relaxed">Banasree, Rampura, Dhaka</p></div>
+                                <div><p className="text-xs text-slate-400">Our Office</p><p className="text-sm font-semibold leading-relaxed">6520 BROADWAY ST APT 1214 <br /> PEARLAND, TX 77581 USA</p></div>
                             </div>
                         </div>
                     </div>

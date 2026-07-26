@@ -80,7 +80,7 @@ function Footer() {
                   </li>
                   <li className="flex items-center gap-3">
                     <Mail className="h-5 w-5 shrink-0 text-indigo-500" />
-                    <a href="mailto:support@wafimartllc.com" className="hover:text-white transition">support@wafimartllc.com</a>
+                    <a href="mailto:support@wafimartllc.com" className="hover:text-white transition">wafimartllc@gmail.com</a>
                   </li>
                   <li className="flex items-start gap-3 pt-2 border-t border-slate-800">
                     <Clock className="h-5 w-5 shrink-0 text-indigo-500 mt-0.5" />
