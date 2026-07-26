@@ -72,11 +72,11 @@ function Footer() {
                 <ul className="space-y-3 text-sm text-slate-400">
                   <li className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 shrink-0 text-indigo-500 mt-0.5" />
-                    <span>Banasree, Rampura, Dhaka, Bangladesh</span>
+                    <span>6520 BROADWAY ST APT 1214 PEARLAND, TX 77581 USA</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <Phone className="h-5 w-5 shrink-0 text-indigo-500" />
-                    <a href="tel:+880123456789" className="hover:text-white transition">+880 1234-567890</a>
+                    <a href="tel:+880123456789" className="hover:text-white transition">+1 (346) 583-1671</a>
                   </li>
                   <li className="flex items-center gap-3">
                     <Mail className="h-5 w-5 shrink-0 text-indigo-500" />
