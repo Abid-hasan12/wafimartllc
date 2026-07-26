@@ -52,10 +52,6 @@ function ContactUs() {
                             </div>
                         </div>
                     </div>
-
-                    <div className="pt-6 border-t border-slate-800 text-xs text-slate-400 text-center md:text-left">
-                        Wafi Mart LLC © 2026. All Rights Reserved.
-                    </div>
                 </div>
 
                 {/* ডান পাশ: কন্টাক্ট ফর্ম */}
