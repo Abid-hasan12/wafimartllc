@@ -297,7 +297,6 @@ function Checkout() {
 
             <div className="mt-4 space-y-3">
               {[
-                { id: 'mobile', label: 'Mobile Banking', description: 'bKash, Nagad, Rocket', icon: Phone },
                 { id: 'card', label: 'Credit/Debit Card', description: 'Visa or Mastercard', icon: CreditCard },
                 { id: 'netbanking', label: 'Net Banking', description: 'Popular banks', icon: Landmark },
               ].map((option) => (
@@ -330,28 +329,7 @@ function Checkout() {
             </div>
 
             <div className="mt-6 space-y-6">
-              {selectedPaymentCategory === 'mobile' && (
-                <div className="rounded-3xl border border-slate-200 bg-white p-5">
-                  <p className="text-sm font-semibold text-slate-900">Choose your wallet</p>
-                  <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                    {['bKash', 'Nagad', 'Rocket'].map((wallet) => (
-                      <button
-                        key={wallet}
-                        type="button"
-                        onClick={() => setSelectedMobileWallet(wallet)}
-                        className={`rounded-3xl border px-4 py-3 text-sm font-semibold transition ${
-                          selectedMobileWallet === wallet
-                            ? 'border-indigo-600 bg-indigo-600 text-white'
-                            : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-indigo-300'
-                        }`}
-                      >
-                        {wallet}
-                      </button>
-                    ))}
-                  </div>
-                  <p className="mt-4 text-sm text-slate-500">You will be redirected to your wallet provider to finish the payment.</p>
-                </div>
-              )}
+              
 
               {selectedPaymentCategory === 'card' && (
                 <div className="rounded-3xl border border-slate-200 bg-white p-5">
