@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Facebook, Instagram, Twitter, Linkedin, Phone, MapPin, Clock } from 'lucide-react';
+import { assetPath } from '../utils/assetPath';
 
 function Footer() {
   const [email, setEmail] = useState('');
@@ -26,7 +27,7 @@ function Footer() {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="inline-flex items-center transition hover:opacity-85">
               <img
-                src="/asset/logow.png"
+                src={assetPath('logow.png')}
                 alt="WafiMartLLC Logo"
                 className="h-32 w-auto object-contain"
               />

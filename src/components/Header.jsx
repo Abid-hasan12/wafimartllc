@@ -4,6 +4,7 @@ import { useAppContext } from '../context/AppContext';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { Search, ShoppingCart, User, Menu, X, ChevronDown, Grid } from 'lucide-react';
+import { assetPath } from '../utils/assetPath';
 
 function Header() {
     const { categories, searchQuery, setSearchQuery } = useAppContext();
@@ -36,7 +37,7 @@ function Header() {
             <div className="mx-auto flex max-w-7xl items-center gap-2 sm:gap-3 px-2 sm:px-2 lg:px-8" style={{ height: '64px' }}>
                 <div className="flex items-center gap-2 sm:gap-3 h-full">
                     <Link to="/" className="h-full flex items-center border border-blue-700 bg-blue-700">
-                        <img src="/asset/logow.png" alt="WafiMartLLC Logo" className="h-36 object-contain" />
+                        <img src={assetPath('logow.png')} alt="WafiMartLLC Logo" className="h-36 object-contain" />
                     </Link>
 
                     <div className="relative hidden md:block">

@@ -1,6 +1,7 @@
 // Comprehensive Product Database - 60 Products (15 per category)
+import { assetPath } from '../utils/assetPath';
 
-export const productsData = [
+const rawProductsData = [
   // ============ ELECTRONICS (15 products) ============
   {
     id: "E001",
@@ -869,6 +870,11 @@ export const productsData = [
     details: ["100% silk", "Hand-finished", "Multiple patterns", "Travel friendly"]
   }
 ];
+
+export const productsData = rawProductsData.map((product) => ({
+  ...product,
+  image: assetPath(product.image.replace(/^\/asset\//, '')),
+}));
 
 // Export categories for filtering
 export const categories = [

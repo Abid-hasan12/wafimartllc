@@ -6,6 +6,7 @@ import ProductCard from '../components/ProductCard';
 import HeroSlider from '../components/HeroSlider';
 import TrendingNow from '../components/TrendingNow';
 import '../components/TrendingNow.css';
+import { assetPath } from '../utils/assetPath';
 
 function Home() {
     const { products } = useAppContext();
@@ -13,19 +14,19 @@ function Home() {
 
     const heroSlides = [
         {
-            imageUrl: '/asset/category/electronics.png',
+            imageUrl: assetPath('category/electronics.png'),
             title: 'Electronics Essentials',
             subtitle: 'Discover cutting-edge devices, smart home gear, and premium tech with curated deals.',
             link: '/category/electronics',
         },
         {
-            imageUrl: '/asset/category/fashion.png',
+            imageUrl: assetPath('category/fashion.png'),
             title: 'Fashion Finds',
             subtitle: 'Refresh your wardrobe with trend-forward styles, accessories, and seasonal essentials.',
             link: '/category/fashion',
         },
         {
-            imageUrl: '/asset/category/home.png',
+            imageUrl: assetPath('category/home.png'),
             title: 'Home Decor Updates',
             subtitle: 'Elevate your space with stylish furniture, decor accents, and curated inspiration.',
             link: '/category/home-kitchen',
@@ -203,22 +204,22 @@ function Home() {
                         {
                             name: 'Electronics',
                             slug: 'electronics',
-                            image: '/asset/category/electronics.png',
+                            image: assetPath('category/electronics.png'),
                         },
                         {
                             name: 'Fashion',
                             slug: 'fashion',
-                            image: '/asset/category/fashion.png',
+                            image: assetPath('category/fashion.png'),
                         },
                         {
                             name: 'Home & Kitchen',
                             slug: 'home-kitchen',
-                            image: '/asset/category/home.png',
+                            image: assetPath('category/home.png'),
                         },
                         {
                             name: 'Wellness',
                             slug: 'wellness',
-                            image: '/asset/category/wellness.png',
+                            image: assetPath('category/wellness.png'),
                         },
                     ].map((cat) => (
                         <Link
